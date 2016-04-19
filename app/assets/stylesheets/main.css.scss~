@@ -1,0 +1,132 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: #eee;
+  line-height: 1.6em;
+}
+
+.navbar{
+  overflow:auto;
+  min-height: 100px;
+  background: #36424a;
+  color: #fff;
+  font-size: 18px;
+  border: 0;
+  border-radius: 0;
+}
+
+.navbar h1{
+  margin: 10px 0 0 0;
+  padding: 0;
+
+}
+
+.navbar a{
+  color:#fff !important;
+}
+
+.navbar a:hover{
+  color:#fff953f;
+}
+
+.navbar a.navbar-brand:hover{
+  color:#fff !important;
+}
+
+
+
+.navbar ul{
+  margin-top: 22px;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
+  background: none;
+  background-color:#ff953f !important; 
+}
+
+.search-form{
+  margin-top:30px;
+}
+
+.search-form input[type='text']{
+  border-radius: 0;
+  height: 38px;
+}
+
+.search-form .btn{
+  border: 0;
+  height:38px;
+  margin-top: 0;
+  border-radius: 0;
+  margin-left: -5px;
+}
+
+.search-form .form-control{
+  background: #f4f4f4;
+  border: 1px solid #eee;
+}
+
+.btn{
+  background: none;
+  border-radius: 0px;
+}
+
+.btn-primary{
+
+  background: #ff953f;
+}
+
+.btn:hover{
+
+  background: #ccc;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c !important;
+    border-color: #4cae4c;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #d9534f !important;
+    border-color: #d43f3a;
+}
+
+.post{
+ border: 1px #ccc solid;
+ background: #fff;
+ margin-bottom: 30px;
+}
+
+.post img{
+
+  width: 100%;
+}
+
+.post-content{
+  padding:20px;
+  box-sizing:border-box;
+}
+
+.post-content{
+  margin: 0px;
+  padding:0px;
+}
+
+
+small{
+  background: #36424a;
+  color:#fff;
+  display: block;
+  margin: 10px 0;
+  padding: 5px 10px;
+}
+
+footer{
+  background: #36424a;
+  color: #fff;
+  text-align: center;
+  height: 60px;
+  padding-top: 20px;
+  margin-top: 30px;
+}

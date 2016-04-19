@@ -7,8 +7,72 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="wrap">
+    <nav class="navbar navbar-default " id="top">
+      <div class="container" >
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><h1>Yala Notlob</h1></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Friends</a></li>
+            <li><a href="#">Groups</a></li>
+            <li><a href="#">Orders</a></li>
+          </ul>
 
-<%= yield %>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Image</a></li>
+            <li><a href="#">Username</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+
+
+
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+    <section id="middle">
+      <div class="container" >
+      	<div ></div>
+
+        <div class="row">
+          <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+
+ 
+
+    	<%= yield %>
+
+
+
+
+
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer id="foot">
+      <p>Copyright &copy; 2016, Yalla Notlob </p>
+    </footer>
+
+
+
+
+
+
+</div>
+
 
 </body>
 </html>

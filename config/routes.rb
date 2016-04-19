@@ -9,7 +9,13 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   #root 'welcome#index'
   
-  devise_for :users, :controllers => { registrations: 'registrations' }
+  #devise_for :users, :controllers => { registrations: 'registrations' }
+
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+  # resources :users
+  # root 'users#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -59,4 +65,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  
 end

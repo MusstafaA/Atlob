@@ -25,8 +25,15 @@ gem 'devise'
 gem 'therubyracer'
 gem 'omniauth'
 gem 'omniauth-digitalocean'
-gem 'bootstrap-sass', '~> 3.3.6'
+
+gem 'omniauth-facebook'
+
+gem "omniauth-google-oauth2"
+
+gem 'bootstrap-sass', '3.2.0.2'
+gem 'autoprefixer-rails'
 gem 'sass-rails', '~> 5.0'
+
 gem 'carrierwave'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
