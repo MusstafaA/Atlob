@@ -30,7 +30,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Image</a></li>
             <li><a href="#">Username</a></li>
-            <li><a href="#">Logout</a></li>
+            <li><%= link_to 'Logout', destroy_user_session_path ,method: :delete %></li>
           </ul>
 
 
@@ -73,12 +73,5 @@
 
 </div>
 
-<<<<<<< HEAD
-=======
-<h1 class='text-primary'>omnia</h1>
-<%= yield %>
->>>>>>> d41ec470244179f437a56f4df477a3dea3073474
-
-<h1>omnia</h1>
 </body>
 </html>
