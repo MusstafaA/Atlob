@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
    mount_uploader :avatar, AvatarUploader
+   
+   validates :name, presence: true,length: { minimum: 6 }  ,uniqueness: true
+   validates :avatar, presence: true
+
 end
