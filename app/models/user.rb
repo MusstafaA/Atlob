@@ -20,4 +20,8 @@ class User < ActiveRecord::Base
     end
 
    mount_uploader :avatar, AvatarUploader
+   
+   validates :name, presence: true,length: { minimum: 6 }  ,uniqueness: true
+   validates :avatar, presence: true
+
 end

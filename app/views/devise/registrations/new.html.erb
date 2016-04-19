@@ -10,7 +10,7 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true ,class:'form-control' %>
   </div>
 
   <div class="field">
@@ -21,16 +21,19 @@
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
-  <div class="field">
+    <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+    </div>
   
+<<<<<<< HEAD
 
+=======
+>>>>>>> d41ec470244179f437a56f4df477a3dea3073474
       
     <div class="field">
     <%= f.label :uploadfile %>
-     <%= f.file_field :avatar,  :accept => 'image/*' %>
+    <%= f.file_field :avatar,  :accept => 'image/*' %>
     </div>
 
   <div class="actions">
