@@ -28,11 +28,8 @@ ActiveRecord::Schema.define(version: 20160419184526) do
     t.datetime "updated_at",                                      null: false
     t.string   "name",                   limit: 255,              null: false
     t.string   "avatar",                 limit: 255
-<<<<<<< HEAD
     t.string   "provider",               limit: 255
     t.string   "uid",                    limit: 255
-=======
->>>>>>> d41ec470244179f437a56f4df477a3dea3073474
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
