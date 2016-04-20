@@ -8027,3 +8027,412 @@ Processing by Devise::SessionsController#new as HTML
   Rendered devise/shared/_links.html.erb (2.2ms)
   Rendered devise/sessions/new.html.erb within layouts/application (8.3ms)
 Completed 200 OK in 53ms (Views: 51.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-20 00:28:41 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 352ms (Views: 329.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-20 00:28:41 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 64ms (Views: 62.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2016-04-20 00:28:44 +0200
+
+
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2016-04-20 00:28:44 +0200
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-20 00:29:34 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (29.1ms)
+Completed 200 OK in 366ms (Views: 321.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2016-04-20 00:29:36 +0200
+
+
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2016-04-20 00:29:36 +0200
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-20 00:31:25 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (30.8ms)
+Completed 200 OK in 387ms (Views: 351.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-20 00:31:27 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 85ms (Views: 69.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/main.self-7eff07d842fc25c3faf88bcba59b9d6d05b483a7ec6939bafc2c00520183bfd6.css?body=1" for 127.0.0.1 at 2016-04-20 00:31:27 +0200
+
+
+Started GET "/assets/partials/_variables.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-20 00:31:27 +0200
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-04-20 00:31:27 +0200
+
+
+Started GET "/assets/application.self-8cd55de276d155538eaf58d573e35cd4befada6114259575f95e934d49d69fe9.css?body=1" for 127.0.0.1 at 2016-04-20 00:31:27 +0200
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-20 00:31:27 +0200
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-04-20 00:31:27 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-20 00:31:27 +0200
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-20 00:31:27 +0200
+
+
+Started GET "/assets/application.self-4d905ca01a79ba077f57f8c565fea41b539faf221b5e2d4912d0fe4686b5ecb7.js?body=1" for 127.0.0.1 at 2016-04-20 00:31:27 +0200
+
+
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2016-04-20 00:31:29 +0200
+
+
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2016-04-20 00:31:29 +0200
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-20 08:40:02 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (11.8ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (132.0ms)
+Completed 200 OK in 763ms (Views: 701.9ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/assets/main.self-7eff07d842fc25c3faf88bcba59b9d6d05b483a7ec6939bafc2c00520183bfd6.css?body=1" for 127.0.0.1 at 2016-04-20 08:40:03 +0200
+
+
+Started GET "/assets/partials/_variables.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-20 08:40:03 +0200
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-20 08:40:03 +0200
+
+
+Started GET "/assets/application.self-8cd55de276d155538eaf58d573e35cd4befada6114259575f95e934d49d69fe9.css?body=1" for 127.0.0.1 at 2016-04-20 08:40:03 +0200
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-20 08:40:03 +0200
+
+
+Started GET "/assets/application.self-4d905ca01a79ba077f57f8c565fea41b539faf221b5e2d4912d0fe4686b5ecb7.js?body=1" for 127.0.0.1 at 2016-04-20 08:40:03 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-20 08:40:14 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-20 08:40:14 +0200
+
+
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2016-04-20 08:40:40 +0200
+
+
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2016-04-20 08:40:40 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-20 12:21:23 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 270ms (Views: 262.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-20 12:21:23 +0200
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-20 12:21:23 +0200
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-20 12:21:25 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (42.7ms)
+Completed 200 OK in 111ms (Views: 80.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-04-20 12:21:30 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 67ms (Views: 65.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-04-20 12:22:15 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8amMBATN5ufitnZJQoBJGnRF9QrRGN8BL5jtgrM+Aaq4tSBH+KMEUD4PXOtkXCzLseBPjfdStiL2X0E42fVXWQ==", "user"=>{"name"=>"mustafa", "email"=>"mustafa@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fd23dad5ef0 @tempfile=#<Tempfile:/tmp/RackMultipart20160420-6124-17bhwdb.png>, @original_filename="photo.jpg.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"photo.jpg.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Sign up"}
+Unpermitted parameters: name, avatar
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (11.6ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'mustafa@yahoo.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`name` IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 372ms (Views: 30.9ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-04-20 12:30:39 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+
+ActionController::RoutingError (No route matches [GET] "/users"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (20.8ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.6ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (76.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (26.9ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (44.6ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-04-20 12:30:45 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 279ms (Views: 255.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-04-20 12:33:48 +0200
+Processing by RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 40ms (Views: 31.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-04-20 12:33:59 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 325ms (Views: 299.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-04-20 12:34:13 +0200
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kkHZVYEFuJ5v5+iCfX8Tf9cFnLLKYjS3CFn/pS2/D2nbXXUWfWtaKbNewiBbo3auEqAmNewoXZTRnlMfR3RZmg==", "user"=>{"name"=>"mustafa", "email"=>"mustafa@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00000003f3db50 @tempfile=#<Tempfile:/tmp/RackMultipart20160420-6581-5vpllz.png>, @original_filename="photo.jpg.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"photo.jpg.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'mustafa@yahoo.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`name` = BINARY 'mustafa' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`name`, `avatar`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('mustafa', 'photo.jpg.png', 'mustafa@yahoo.com', '$2a$11$e6X8Iftlw/UdiecqJdOMtOGOwhG1ocrmRFXwKLQtChdJRb5Z.ZIri', '2016-04-20 10:34:13', '2016-04-20 10:34:13')[0m
+  [1m[35m (42.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (15.4ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2016-04-20 10:34:13', `current_sign_in_at` = '2016-04-20 10:34:13', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2016-04-20 10:34:13' WHERE `users`.`id` = 2
+  [1m[36m (38.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 364ms (ActiveRecord: 97.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-20 12:34:13 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 61ms (Views: 60.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-20 12:36:01 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 286ms (Views: 278.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-8cd55de276d155538eaf58d573e35cd4befada6114259575f95e934d49d69fe9.css?body=1" for 127.0.0.1 at 2016-04-20 12:36:01 +0200
+
+
+Started GET "/assets/main.self-7eff07d842fc25c3faf88bcba59b9d6d05b483a7ec6939bafc2c00520183bfd6.css?body=1" for 127.0.0.1 at 2016-04-20 12:36:01 +0200
+
+
+Started GET "/assets/partials/_variables.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-20 12:36:01 +0200
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-04-20 12:36:01 +0200
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-20 12:36:01 +0200
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-04-20 12:36:01 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-20 12:36:01 +0200
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-20 12:36:01 +0200
+
+
+Started GET "/assets/application.self-4d905ca01a79ba077f57f8c565fea41b539faf221b5e2d4912d0fe4686b5ecb7.js?body=1" for 127.0.0.1 at 2016-04-20 12:36:01 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-20 12:36:02 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 39ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-04-20 12:36:28 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Fw+3XV3Earr6cpOmlTf6cN1Evjcsgj+Df59+rTTcaZheExseoaqIDSbLuQSz65+hGOEEsArIVqCmWNIXXhc/aw=="}
+  [1m[35mUser Load (22.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 71ms (ActiveRecord: 23.7ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-20 12:36:28 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 52ms (Views: 47.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-04-20 12:36:36 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hQJ9bl8xVS5W05yq2wgWp5yLDsgl/FvKhxTYGFMx42LM5aYZbMU9Qemu2Gl7VigRCt+3Kpgj4rIKRGvayoytFw==", "user"=>{"email"=>"mustafa@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'mustafa@yahoo.com'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `current_sign_in_at` = '2016-04-20 10:36:36', `sign_in_count` = 2, `updated_at` = '2016-04-20 10:36:36' WHERE `users`.`id` = 2[0m
+  [1m[35m (77.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 281ms (ActiveRecord: 78.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-20 12:36:36 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 26ms (Views: 25.9ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-04-20 12:36:38 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YEhfiDB+4yusLURVP+l0Jr+/RmzyupXSQFNE/2XM7eTeCWpBSe2g5jZdP4ZquMASReSMeMJlncjH68NuwYbVIQ=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-20 12:36:38 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 35ms (Views: 32.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-20 12:36:43 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-20 12:36:44 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQBdCRSUE9DV06l_JXdotyIyIfz7bJhuZmxDgLzX6XqXSvspYVtRDKe68TnXrCmvxawwy-7O9PPsaXZMBTC98S-u3SjS-OuX7FE9nHjSoUlzJzLVjWEwt1R4zHA-SGaeQ1S67p4XFp3enj3xp8_lpHPtXBarBiLIVDKF8fyNG0VBpI4Fxai9wW2PYpiSScM1gISySpbyChlyrfySzxJQ124-az4y_-hfSmP02SZLm20KamCOTUFe5NaN4-EzfOvCFF4IVPjiXSGG-OdagE4Go_FD4s98wjlndR43pPVpsLUtvYkhvbzPCN2eGMPeXZ5p2vNbxNN8vy78QUhmkvm_unBv&state=1f6ea61c75f5fe8e476c8f25e88b2f145348e133a0b2f97b" for 127.0.0.1 at 2016-04-20 12:36:45 +0200
+Processing by CallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBdCRSUE9DV06l_JXdotyIyIfz7bJhuZmxDgLzX6XqXSvspYVtRDKe68TnXrCmvxawwy-7O9PPsaXZMBTC98S-u3SjS-OuX7FE9nHjSoUlzJzLVjWEwt1R4zHA-SGaeQ1S67p4XFp3enj3xp8_lpHPtXBarBiLIVDKF8fyNG0VBpI4Fxai9wW2PYpiSScM1gISySpbyChlyrfySzxJQ124-az4y_-hfSmP02SZLm20KamCOTUFe5NaN4-EzfOvCFF4IVPjiXSGG-OdagE4Go_FD4s98wjlndR43pPVpsLUtvYkhvbzPCN2eGMPeXZ5p2vNbxNN8vy78QUhmkvm_unBv", "state"=>"1f6ea61c75f5fe8e476c8f25e88b2f145348e133a0b2f97b"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`provider` = 'facebook' AND `users`.`uid` = '1147615865279263'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2016-04-19 22:18:51', `current_sign_in_at` = '2016-04-20 10:36:47', `sign_in_count` = 3, `updated_at` = '2016-04-20 10:36:47' WHERE `users`.`id` = 1
+  [1m[36m (35.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 44ms (ActiveRecord: 36.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-20 12:36:47 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-04-20 12:36:55 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"B1Ify4frMCe5ftOJqigeReMP5wB5afyQlHmmEWaBHP5QYCawB+HBhS80Pv5UdJkLir8FjDzRkFw0NBO02Vsvjw=="}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-20 12:36:55 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-20 12:37:21 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-20 12:37:21 +0200
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-04-20 12:37:28 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"B1Ify4frMCe5ftOJqigeReMP5wB5afyQlHmmEWaBHP5QYCawB+HBhS80Pv5UdJkLir8FjDzRkFw0NBO02Vsvjw=="}
+Redirected to http://localhost:3000/users/sign_in
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-20 12:37:28 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2016-04-20 12:37:30 +0200
+
+
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2016-04-20 12:37:31 +0200
