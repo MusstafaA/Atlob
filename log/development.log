@@ -8436,3 +8436,2471 @@ Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2016-04-20 12:37:30 +02
 
 
 Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2016-04-20 12:37:31 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 06:47:45 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (11.9ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 589ms (Views: 570.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-21 06:47:49 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (199.0ms)
+Completed 200 OK in 471ms (Views: 256.2ms | ActiveRecord: 19.3ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 06:47:57 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 06:47:58 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQCdQqRU_4kaCP-UpobyvZQzhiZIEY-gcqrDFc35hHidq5Q5v70krCcNdBjTn6mXpKQ0yTqTivHrZDAGLEAUX1ssT4okNBPK6MREyOVuiqXsUAHAve-dpkHfF7y3ATjSByHmuEWwq2w-l9M4NxogjEQdJr5rMRnedEfq5TlmuFtleCxhCaiXO_Pyy9jz6csbUSNATvXCDFvOijTd6uBxq6rdahR1qsfEPK9TYxW4hRbRzFKnGiKUZnCBprmn81KR6pQRq-FRXcVycT2tYQeOpbEloGUMPJi8J501krLhBcU04NMo612Pei0_G9HZAk9S2jdC3Eq_hkvjXhNdAJsBnLKY&state=14cfe4d5f657ca899e48a52014db023e502092a234e34b83" for 127.0.0.1 at 2016-04-21 06:47:58 +0200
+Processing by CallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCdQqRU_4kaCP-UpobyvZQzhiZIEY-gcqrDFc35hHidq5Q5v70krCcNdBjTn6mXpKQ0yTqTivHrZDAGLEAUX1ssT4okNBPK6MREyOVuiqXsUAHAve-dpkHfF7y3ATjSByHmuEWwq2w-l9M4NxogjEQdJr5rMRnedEfq5TlmuFtleCxhCaiXO_Pyy9jz6csbUSNATvXCDFvOijTd6uBxq6rdahR1qsfEPK9TYxW4hRbRzFKnGiKUZnCBprmn81KR6pQRq-FRXcVycT2tYQeOpbEloGUMPJi8J501krLhBcU04NMo612Pei0_G9HZAk9S2jdC3Eq_hkvjXhNdAJsBnLKY", "state"=>"14cfe4d5f657ca899e48a52014db023e502092a234e34b83"}
+  [1m[35mUser Load (17.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`provider` = 'facebook' AND `users`.`uid` = '1147615865279263'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (9.3ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2016-04-20 10:36:47', `current_sign_in_at` = '2016-04-21 04:48:00', `sign_in_count` = 4, `updated_at` = '2016-04-21 04:48:00' WHERE `users`.`id` = 1
+  [1m[36m (36.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 94ms (ActiveRecord: 63.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 06:48:00 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-04-21 06:48:28 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wqA/ffn+kD9gKDiPQWqUxEmYCRMOfaHDWnYnmJ40Q6VHqEx16sCmpTzoMZpGN84yHfnJDVom0SinyyNT7ADLaw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 21ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-21 06:48:28 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 27ms (Views: 26.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 06:48:31 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 06:48:31 +0200
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-21 09:04:25 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (29.6ms)
+Completed 200 OK in 319ms (Views: 288.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 09:04:30 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 09:04:30 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQCvxPSORdH1_tbEbhrE3iJdUayLMPFL4XNPExKBJAJQk-k4VeaiTTzeNRogVoWxDgff-fg70Xphm6swRfmzJuZY1o6M4xCswaXZsJ08xu1MT9VyIaULOXJ2ounf5EkkhNiWfZvqv156NH806DBC8yQ4n1gjLiOUwnaJFRupnMKtiyWSjr5_nEpcBYmfxL0wY2SdfEHTvies9CPVufv2bbFGmuEdRkBSgNWPIUrKz3hyxCsVsXEgjAgRf26KGASjR_lhiZ3EyK0SfSqhbA6hcPP0i67D-N4Iclp_BZTq-s5543GEYSywen9VN43CvIcdauDk8M7z2QFI8ulZrP6NMjHc&state=aebb43afb56fa813801eb9167ec5367d7db1dfabe00b7c18" for 127.0.0.1 at 2016-04-21 09:04:40 +0200
+Processing by CallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCvxPSORdH1_tbEbhrE3iJdUayLMPFL4XNPExKBJAJQk-k4VeaiTTzeNRogVoWxDgff-fg70Xphm6swRfmzJuZY1o6M4xCswaXZsJ08xu1MT9VyIaULOXJ2ounf5EkkhNiWfZvqv156NH806DBC8yQ4n1gjLiOUwnaJFRupnMKtiyWSjr5_nEpcBYmfxL0wY2SdfEHTvies9CPVufv2bbFGmuEdRkBSgNWPIUrKz3hyxCsVsXEgjAgRf26KGASjR_lhiZ3EyK0SfSqhbA6hcPP0i67D-N4Iclp_BZTq-s5543GEYSywen9VN43CvIcdauDk8M7z2QFI8ulZrP6NMjHc", "state"=>"aebb43afb56fa813801eb9167ec5367d7db1dfabe00b7c18"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`provider` = 'facebook' AND `users`.`uid` = '1147615865279263'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2016-04-21 04:48:00', `current_sign_in_at` = '2016-04-21 07:04:42', `sign_in_count` = 5, `updated_at` = '2016-04-21 07:04:42' WHERE `users`.`id` = 1
+  [1m[36m (38.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 48ms (ActiveRecord: 39.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 09:04:42 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `fa_icon' for #<#<Class:0x007f5a6a667e18>:0x007f5a6913f900>):
+    32: 
+    33:             <li class="nav-item btn-group">
+    34:               <a class="dropdown-toggle nav-link" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="" >
+    35:                 <%= fa_icon "bell" %>
+    36:               </a>
+    37: 
+    38:               <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+  app/views/layouts/application.html.erb:35:in `_app_views_layouts_application_html_erb___2560261309974244845_28443160'
+
+
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.5ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.2ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.6ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (44.6ms)
+
+
+Started GET "/users/auth/facebook/callback?code=AQDUtJQa_IixEhGo7AsvtF-ZMlbYyVp6a5I0FmZOvZE5EAvPVujNAbPf6b9-A2BMV5lJ1cAplOVVtuFjAXmYBXW3-z3TJeivXaobdXOfasQ2aZggFzb6UbBwkL39Bs13nT9j-aQj-TsOmRfSYZh9BC2J3m7jUTJvxbr4ORczNDX6f7iZ8y6kutMuOIr9-6f0iUXx_h199P37pCohqr5Gb8z6LvEm2l4ZAWa7TCbh-RPB34NxGBpUYKAgVarsSwWITLfwfVm9K0ovTJO4QVT5of5SvjA0Eo7kDoETG12WR3All-2S-Ov8LrVfNtNG8wGmB8PSR6QdCKUSrqcoPwiPcDqT&state=aebb43afb56fa813801eb9167ec5367d7db1dfabe00b7c18" for 127.0.0.1 at 2016-04-21 09:09:32 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CallbacksController#failure as HTML
+  Parameters: {"code"=>"AQDUtJQa_IixEhGo7AsvtF-ZMlbYyVp6a5I0FmZOvZE5EAvPVujNAbPf6b9-A2BMV5lJ1cAplOVVtuFjAXmYBXW3-z3TJeivXaobdXOfasQ2aZggFzb6UbBwkL39Bs13nT9j-aQj-TsOmRfSYZh9BC2J3m7jUTJvxbr4ORczNDX6f7iZ8y6kutMuOIr9-6f0iUXx_h199P37pCohqr5Gb8z6LvEm2l4ZAWa7TCbh-RPB34NxGBpUYKAgVarsSwWITLfwfVm9K0ovTJO4QVT5of5SvjA0Eo7kDoETG12WR3All-2S-Ov8LrVfNtNG8wGmB8PSR6QdCKUSrqcoPwiPcDqT", "state"=>"aebb43afb56fa813801eb9167ec5367d7db1dfabe00b7c18"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 09:09:36 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 09:09:37 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQAM5sBNjW6fgP5vuItvYrl_ChVS59CdJB0wfj7p2HraJKS2N5297PFqk5A8G_xKBFOtKOShirLwHB33LhlfpizdczAmAb874gdK059spNraBOqxHPKtyKiaB8VVhuEZIVVtqit6aZiimGnZd6KudolOTpjmFlV47LEae0ODTXdwi8bra1kiLrkwvEdQMX8A3RoeZSrxMZHQnLzQnec_gG3llpS6X8h3axXGmYiVrR5mQee_VtVEeGuGHID3JwzVDBhLc3EYyr-lKrJhhwcVeNGB_2h7P46_18eGU_i0CrK9R2PoePNKw-2kUtn56jr1soNjh7MTU68SAoCpRt9-MfPN&state=60ce11d384a9542285cab2e417fac9a205b02ae9807524e6" for 127.0.0.1 at 2016-04-21 09:09:37 +0200
+Processing by CallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAM5sBNjW6fgP5vuItvYrl_ChVS59CdJB0wfj7p2HraJKS2N5297PFqk5A8G_xKBFOtKOShirLwHB33LhlfpizdczAmAb874gdK059spNraBOqxHPKtyKiaB8VVhuEZIVVtqit6aZiimGnZd6KudolOTpjmFlV47LEae0ODTXdwi8bra1kiLrkwvEdQMX8A3RoeZSrxMZHQnLzQnec_gG3llpS6X8h3axXGmYiVrR5mQee_VtVEeGuGHID3JwzVDBhLc3EYyr-lKrJhhwcVeNGB_2h7P46_18eGU_i0CrK9R2PoePNKw-2kUtn56jr1soNjh7MTU68SAoCpRt9-MfPN", "state"=>"60ce11d384a9542285cab2e417fac9a205b02ae9807524e6"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`provider` = 'facebook' AND `users`.`uid` = '1147615865279263'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 19ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 09:09:39 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___1338180958566988778_44142940 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___1338180958566988778_44142940 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___1338180958566988778_44142940 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___1338180958566988778_44142940 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 3243ms (Views: 3241.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 09:10:17 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 33ms (Views: 32.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 09:11:10 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 37ms (Views: 36.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 09:11:17 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 38ms (Views: 37.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 09:11:51 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 33ms (Views: 32.5ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-04-21 09:11:52 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"RSsgu5lZCbEAB3bw71vSwdzZ6gLArnr8Jr+LWQ7xC7ci0LRQFENyJKID6Z4MfQgLAMjnlPDj1v6EXsJtPXnMGA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 14ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-21 09:11:52 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 70ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 09:11:55 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 09:11:56 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQD1H57INfnwQLbVFeYRppwRsCaimZo8vgvyWB53YAoVLF_WqBRHO8hZ0zdwLbrZYdrvRQFYHFqchVBjthxkxAkUoK7EryqYpDa8lEeX2-FdfdghS3SiLKt14wka803YpdcwdyFAh9_mVvumOdzk6rCIX2I9_4FBfNgiAQD7Cm9TaGIGsRGZycdEOWngkWUlMAZ6VbzBlFhwQfFas95NN5b2x500HXSP0TumYvgL3IdozT6rCnm7j8E_itaVKe_BTM_Lq_eZgD1KuADKWt10_L-wP_nwy038bThPFFg3v6a_RRDWzizuO1x0Q15mYiwri3AyVO8B9BC-e_9nhkFV9znX&state=3dc2fa629b23ec8a3042b209de8befc0a3a7be986d6a5353" for 127.0.0.1 at 2016-04-21 09:11:56 +0200
+Processing by CallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQD1H57INfnwQLbVFeYRppwRsCaimZo8vgvyWB53YAoVLF_WqBRHO8hZ0zdwLbrZYdrvRQFYHFqchVBjthxkxAkUoK7EryqYpDa8lEeX2-FdfdghS3SiLKt14wka803YpdcwdyFAh9_mVvumOdzk6rCIX2I9_4FBfNgiAQD7Cm9TaGIGsRGZycdEOWngkWUlMAZ6VbzBlFhwQfFas95NN5b2x500HXSP0TumYvgL3IdozT6rCnm7j8E_itaVKe_BTM_Lq_eZgD1KuADKWt10_L-wP_nwy038bThPFFg3v6a_RRDWzizuO1x0Q15mYiwri3AyVO8B9BC-e_9nhkFV9znX", "state"=>"3dc2fa629b23ec8a3042b209de8befc0a3a7be986d6a5353"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`provider` = 'facebook' AND `users`.`uid` = '1147615865279263'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2016-04-21 07:04:42', `current_sign_in_at` = '2016-04-21 07:11:58', `sign_in_count` = 6, `updated_at` = '2016-04-21 07:11:58' WHERE `users`.`id` = 1
+  [1m[36m (49.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 55ms (ActiveRecord: 50.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 09:11:58 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 42ms (Views: 41.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 09:14:20 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 48ms (Views: 46.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 09:14:22 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 50ms (Views: 49.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-04-21 09:17:31 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+xvB2hkXNB+hBxq7EAyXObVRg38qD5S1PmdYfOAl1g7VHb3dOYphUgdy5KF9gyMcnHhw3xH1jJ+Nt6N0ip+H2A=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 21ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-21 09:17:31 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 46ms (Views: 45.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 09:17:34 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 09:17:35 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQCE3kzDdx6PNM7KnjFPDgfU0UW-oI5I-_zdAabdj8TWudCgESf8nVhlzrj9F7-dhre88XFoCAlu1nyqXRKINAMC1abLWsLz-o58zgMERy1HgvqwNEkhrUNSsZyK9Mhs1x_1uqSG8U-TcG5kyccQiqkhi60Ph_9PPpHtKox1e1qmxSiZEutpEdKEfrRnQtn9Jbrr4ruu9_V5wR8ZbY-QQ7awNCDHBkD-PuSSIX50fGqnT-XcUXrbkxFIEc9RyemKD_LcwYygersiW2uFX5Br0lTGGXUGt6MrKPooK5LKleJO-mZ0sfCrnJUZGOt2C2KC1QXyVgOIRc-fYA8VTbD3SCIi&state=454d32b8f799d22ef8569444c9a1e2dacc0b7ad9b72cc6fd" for 127.0.0.1 at 2016-04-21 09:17:35 +0200
+Processing by CallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCE3kzDdx6PNM7KnjFPDgfU0UW-oI5I-_zdAabdj8TWudCgESf8nVhlzrj9F7-dhre88XFoCAlu1nyqXRKINAMC1abLWsLz-o58zgMERy1HgvqwNEkhrUNSsZyK9Mhs1x_1uqSG8U-TcG5kyccQiqkhi60Ph_9PPpHtKox1e1qmxSiZEutpEdKEfrRnQtn9Jbrr4ruu9_V5wR8ZbY-QQ7awNCDHBkD-PuSSIX50fGqnT-XcUXrbkxFIEc9RyemKD_LcwYygersiW2uFX5Br0lTGGXUGt6MrKPooK5LKleJO-mZ0sfCrnJUZGOt2C2KC1QXyVgOIRc-fYA8VTbD3SCIi", "state"=>"454d32b8f799d22ef8569444c9a1e2dacc0b7ad9b72cc6fd"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`provider` = 'facebook' AND `users`.`uid` = '1147615865279263'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2016-04-21 07:11:58', `current_sign_in_at` = '2016-04-21 07:17:58', `sign_in_count` = 7, `updated_at` = '2016-04-21 07:17:58' WHERE `users`.`id` = 1
+  [1m[36m (44.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 55ms (ActiveRecord: 45.5ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 09:17:58 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 09:17:58 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 48ms (Views: 45.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 09:24:50 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 37ms (Views: 36.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 09:25:12 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 45ms (Views: 44.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 09:26:54 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 43ms (Views: 42.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 09:27:10 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `fo_icon' for #<#<Class:0x007f964b6dcf20>:0x007f964a5e2eb8>
+Did you mean?  fa_icon):
+    32: 
+    33:             <li class="nav-item btn-group">
+    34:               <a class="dropdown-toggle nav-link" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded>
+    35:                 <%= fo_icon "bell" %>
+    36:               </a>
+    37: 
+    38:               <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+  app/views/layouts/application.html.erb:35:in `_app_views_layouts_application_html_erb___1338180958566988778_70141733598920'
+
+
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.7ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (21.1ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.5ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (40.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 09:27:26 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 09:34:42 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 35ms (Views: 33.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 09:37:07 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:08:12 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (11.8ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 747ms (Views: 722.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-21 10:08:15 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (203.5ms)
+Completed 200 OK in 464ms (Views: 257.6ms | ActiveRecord: 24.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-21 10:08:24 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 56ms (Views: 54.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 10:08:26 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 10:08:27 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQAhP1M3fYhhapGpLkD20zboibZ4VN4THAMxWRikGJVwvsWiUwx_eHIMcdeK9MbGHzKtc9_wUGHAThX9l2R7LpDmdv_aPOp9HQ1HA0xSNnI8WzH8_sy76Or7P-NrMO8dbQC99gRp3m8hY6-a9ILfln2XhMLlwX2Q6amXvHdVFqIMxoPoHphJzWootcT81w1mMXQMUtxvJU_H8brCTsvIIkpI7rH7foZe4K5nVe1DKSHssqPa8TGbuBphRaF56DyoGe1zskC6HDJ_jk5VEaC0b8pa5wQM4q1nm5Q1Upcy5PARRUsKktVFoL-9qeKODE53YyFR5FBx_ArmT6XAhxQ2HvV0&state=5cde85d326b23720816585ace3f5f746029c99758b84c0e2" for 127.0.0.1 at 2016-04-21 10:08:27 +0200
+Processing by CallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAhP1M3fYhhapGpLkD20zboibZ4VN4THAMxWRikGJVwvsWiUwx_eHIMcdeK9MbGHzKtc9_wUGHAThX9l2R7LpDmdv_aPOp9HQ1HA0xSNnI8WzH8_sy76Or7P-NrMO8dbQC99gRp3m8hY6-a9ILfln2XhMLlwX2Q6amXvHdVFqIMxoPoHphJzWootcT81w1mMXQMUtxvJU_H8brCTsvIIkpI7rH7foZe4K5nVe1DKSHssqPa8TGbuBphRaF56DyoGe1zskC6HDJ_jk5VEaC0b8pa5wQM4q1nm5Q1Upcy5PARRUsKktVFoL-9qeKODE53YyFR5FBx_ArmT6XAhxQ2HvV0", "state"=>"5cde85d326b23720816585ace3f5f746029c99758b84c0e2"}
+  [1m[35mUser Load (17.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`provider` = 'facebook' AND `users`.`uid` = '1147615865279263'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (5.1ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2016-04-21 07:17:58', `current_sign_in_at` = '2016-04-21 08:08:28', `sign_in_count` = 8, `updated_at` = '2016-04-21 08:08:28' WHERE `users`.`id` = 1
+  [1m[36m (38.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 102ms (ActiveRecord: 61.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:08:28 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (1.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 29ms (Views: 27.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fc969dc1c6ff531abcf368089dcbaf5775133b0626ff56b52301a059fc0f9e1e.woff" for 127.0.0.1 at 2016-04-21 10:08:28 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:08:53 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 36ms (Views: 35.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:13:30 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 34ms (Views: 32.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:14:39 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 38ms (Views: 37.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:14:58 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:17:07 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 30ms (Views: 28.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:17:59 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 38ms (Views: 37.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:19:30 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 34ms (Views: 32.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:20:46 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 26ms (Views: 25.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:22:23 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb__364430128537441674_70185219723500 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb__364430128537441674_70185219723500 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb__364430128537441674_70185219723500 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb__364430128537441674_70185219723500 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 2522ms (Views: 2521.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/main.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-21 10:22:26 +0200
+
+
+Started GET "/assets/application.self-49de9c66efd10c88143eb1d3202bd405d560552726b10fa119b98623f81af0e3.css?body=1" for 127.0.0.1 at 2016-04-21 10:22:26 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:22:52 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:30:48 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 151ms (Views: 150.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2016-04-21 10:30:48 +0200
+
+
+Started GET "/assets/application.self-2b0db6c9c69be74ac2073d82f80c7faf73c401b838726bf68d193daf0fa114d3.js?body=1" for 127.0.0.1 at 2016-04-21 10:30:48 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:31:35 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 39ms (Views: 38.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:32:47 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 418ms (Views: 406.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:35:25 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 250ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (couldn't find file 'bootstrap-dropdown' with type 'application/javascript'):
+    2: <html>
+    3: <head>
+    4:   <title>AtlobApp</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/javascripts/application.js:16
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__3359412966319301028_45570840'
+
+
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (26.8ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (26.5ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (46.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:36:51 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 234ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (couldn't find file 'jquery-ui' with type 'application/javascript'):
+    2: <html>
+    3: <head>
+    4:   <title>AtlobApp</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/javascripts/application.js:17
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__500905606640621658_33273340'
+
+
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (25.7ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (26.0ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (46.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:37:19 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 546ms (Views: 533.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.self-d4e5c088ebf4f6884d3dfe431397b248a61e6c3d8005c02ab67bd938c972162a.js?body=1" for 127.0.0.1 at 2016-04-21 10:37:20 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:38:15 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 58ms (Views: 57.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:38:51 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 41ms (Views: 40.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:39:25 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 36ms (Views: 35.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:39:35 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 34ms (Views: 33.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:40:08 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 500ms (Views: 487.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.self-d85ac901d3ac83001abe2d1e07b7f0a6bbf7ad784c1c500d0696d9bed03ca71b.js?body=1" for 127.0.0.1 at 2016-04-21 10:40:08 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:41:19 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 57ms (Views: 55.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:42:17 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003724046680 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003724046680 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+Completed 500 Internal Server Error in 633ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Invalid CSS after "  z-index=10000": expected "{", was ";"):
+    2: <html>
+    3: <head>
+    4:   <title>AtlobApp</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/main.css.scss:140
+  app/assets/stylesheets/application.css.scss:21
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___3656533552034765775_70003724046680'
+
+
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.0ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.1ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.9ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (22.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (49.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:42:36 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003724046680 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003724046680 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003724046680 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003724046680 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 2269ms (Views: 2268.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-e37676ced29376a8aec3e419ae720c8663b2af07443a5ba68568afaea9f62288.css?body=1" for 127.0.0.1 at 2016-04-21 10:42:38 +0200
+
+
+Started GET "/assets/main.self-22088bee89ad7324e2cb20e4f3102fc21753f6852380faccb3714327037b62e8.css?body=1" for 127.0.0.1 at 2016-04-21 10:42:38 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:43:07 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003724046680 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003724046680 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003724046680 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003724046680 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 1655ms (Views: 1654.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/main.self-277abaed7e2d9143ca5648dee3157f281288bea79a8ccc036ddec0489a8294b0.css?body=1" for 127.0.0.1 at 2016-04-21 10:43:08 +0200
+
+
+Started GET "/assets/application.self-a5bc95dbe5307a0688965acc6a08aaaace3c0a2b0d7d4afd4bc4ca7b90ad5b7d.css?body=1" for 127.0.0.1 at 2016-04-21 10:43:08 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:45:14 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003606353000 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003606353000 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003606353000 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003606353000 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 1684ms (Views: 1683.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/main.self-640ea02abbdcceabc9aa775f6ba1fc0dc116a3c7e8eebe7fe8eeb51f86473ad0.css?body=1" for 127.0.0.1 at 2016-04-21 10:45:16 +0200
+
+
+Started GET "/assets/application.self-50af282f79c0a996383d5d0d5848143ef6fb1e17e57eaec532da4ac68d393132.css?body=1" for 127.0.0.1 at 2016-04-21 10:45:16 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:46:03 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003606353000 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003606353000 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003606353000 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003606353000 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 1558ms (Views: 1555.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/main.self-fa58094985241573c0e8304eb510dd8c01a3600158260bbc0e39580c82e09887.css?body=1" for 127.0.0.1 at 2016-04-21 10:46:05 +0200
+
+
+Started GET "/assets/application.self-9c05205f3e93e604a80d84c01a37b52e0c007bc3312c038b712f2bf1b0735437.css?body=1" for 127.0.0.1 at 2016-04-21 10:46:05 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:48:07 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003606353000 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003606353000 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003606353000 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003606353000 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 1980ms (Views: 1979.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-8cf0a2ed610830047ddb7efe2b6d25622749cb2a089349e6bd8f0245077482eb.css?body=1" for 127.0.0.1 at 2016-04-21 10:48:09 +0200
+
+
+Started GET "/assets/main.self-32bc5efd19d53f52b66d7be7ae23bec2f839e9d2f93f29f2b2ffd17ca2068236.css?body=1" for 127.0.0.1 at 2016-04-21 10:48:09 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:48:15 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 34ms (Views: 33.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:48:41 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003606353000 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003606353000 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003606353000 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003606353000 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 1844ms (Views: 1843.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/main.self-6e2ddbb6c2a025d927745a1d008e2bd6b6abb5d19f3bdb7b57f63a56960dd40c.css?body=1" for 127.0.0.1 at 2016-04-21 10:48:43 +0200
+
+
+Started GET "/assets/application.self-7d4ea5f38d043937618e838c8cdf5d38719bb8b877f2fb3a576e34c879dd256c.css?body=1" for 127.0.0.1 at 2016-04-21 10:48:43 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:48:55 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003606353000 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003606353000 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003606353000 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003606353000 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 1614ms (Views: 1613.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/main.self-5165d3c3f22a381d2382f36786766e45487fe6c178ea139380e9a9d308ccd979.css?body=1" for 127.0.0.1 at 2016-04-21 10:48:56 +0200
+
+
+Started GET "/assets/application.self-d46f67f914bf7bb6e822f20be48f5006830d47b753920c9fa65dc714774b2d5d.css?body=1" for 127.0.0.1 at 2016-04-21 10:48:56 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:51:01 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003606353000 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003606353000 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003606353000 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003606353000 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 1744ms (Views: 1743.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/main.self-4fcdfbb11baddfca603545ffb5e6f51c13e48985674a211ce5e19f8ef129b373.css?body=1" for 127.0.0.1 at 2016-04-21 10:51:02 +0200
+
+
+Started GET "/assets/application.self-16cee252cad949d69944a4cd61a9cbd33efff038a7eaaed1bbbc323784278842.css?body=1" for 127.0.0.1 at 2016-04-21 10:51:02 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:52:52 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003629671720 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003629671720 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003629671720 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003629671720 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 1599ms (Views: 1597.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/main.self-3138afa044ff33930a2b22ebde22fc6c015e05a75f4e832edc43fb84cc48d164.css?body=1" for 127.0.0.1 at 2016-04-21 10:52:54 +0200
+
+
+Started GET "/assets/application.self-2e53b253ff70d8237c76bdb1ddeccab7e19a531844b3cae613afb48e9de9d8ab.css?body=1" for 127.0.0.1 at 2016-04-21 10:52:54 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:53:42 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 37ms (Views: 36.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:54:17 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003629671720 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003629671720 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003629671720 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003629671720 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 1890ms (Views: 1889.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-6eff3a3a917cc38265c8449b66f1d192cca2d7859141cf589d63f5b7a3883b55.css?body=1" for 127.0.0.1 at 2016-04-21 10:54:19 +0200
+
+
+Started GET "/assets/main.self-36d180d572b82ffe29d335217ba059eb967752269e4b12ceec66066fe977b96c.css?body=1" for 127.0.0.1 at 2016-04-21 10:54:19 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:54:40 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003629671720 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003629671720 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003629671720 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003629671720 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 1479ms (Views: 1478.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:54:42 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:55:27 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003629671720 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003629671720 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003629671720 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003629671720 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 1985ms (Views: 1984.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/main.self-261442749f10f71f8cf21200b304dfcf918d48bfa95cfe539d6c66c9f54ecee4.css?body=1" for 127.0.0.1 at 2016-04-21 10:55:29 +0200
+
+
+Started GET "/assets/application.self-07f26083912a0da2c4cfc03f72cd6e6eadd385bd04f058f459c37592793a04b3.css?body=1" for 127.0.0.1 at 2016-04-21 10:55:29 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:56:23 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 34ms (Views: 33.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:57:11 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 31ms (Views: 30.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 10:57:15 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 32ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 11:00:22 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 11:00:57 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 33ms (Views: 30.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 11:01:24 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 34ms (Views: 33.5ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-04-21 11:01:27 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"A49t4hOprhAJ3cZ7wWV/2dKunmlVSAkqpdqppFXLMu3YIVTi2ssxTSEhHO3G7HedyRNdZtY0NA9oZX63MtwdWw=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 17ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-21 11:01:28 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 57ms (Views: 52.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 11:01:34 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 11:01:38 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 11:01:58 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 11:02:04 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQCKNUcl36px70-NWztSMyCmov2XjEXpFDF3OLXyUqdFz5BIlpJ0pkq8jP_PZg1A5ivaqcvEe-_BjGfhjbbCJ_jmpCWTvCpVB5yZxiKwcckmD10vajiTnZohHU-5S47gfRAPs0Ph4OTK7X_BKGGULVp3F32zkn5Nj2V2DvDgGyqI6ZHTWHJ9zVM_rMpyCrv6aRXPHhu8ipSRZzGpW-qYZXBXtHLkijI877wrl37idifMMXhLcboR0UIQhgNtgWy4YbQrbjfK0NCgUhEVAtVFlHpYjqFsSoZxWyIsdvaLP6WHvbpQuRsdbPqRTPJDuiYj4tovpOk_OYEdpnnRZGPXN3Lh&state=173549236795fd14d68eaec1a74b9ccd9f48e7b39808b3b7" for 127.0.0.1 at 2016-04-21 11:02:06 +0200
+Processing by CallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCKNUcl36px70-NWztSMyCmov2XjEXpFDF3OLXyUqdFz5BIlpJ0pkq8jP_PZg1A5ivaqcvEe-_BjGfhjbbCJ_jmpCWTvCpVB5yZxiKwcckmD10vajiTnZohHU-5S47gfRAPs0Ph4OTK7X_BKGGULVp3F32zkn5Nj2V2DvDgGyqI6ZHTWHJ9zVM_rMpyCrv6aRXPHhu8ipSRZzGpW-qYZXBXtHLkijI877wrl37idifMMXhLcboR0UIQhgNtgWy4YbQrbjfK0NCgUhEVAtVFlHpYjqFsSoZxWyIsdvaLP6WHvbpQuRsdbPqRTPJDuiYj4tovpOk_OYEdpnnRZGPXN3Lh", "state"=>"173549236795fd14d68eaec1a74b9ccd9f48e7b39808b3b7"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`provider` = 'facebook' AND `users`.`uid` = '1147615865279263'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2016-04-21 08:08:28', `current_sign_in_at` = '2016-04-21 09:02:08', `sign_in_count` = 9, `updated_at` = '2016-04-21 09:02:08' WHERE `users`.`id` = 1
+  [1m[36m (49.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 55ms (ActiveRecord: 50.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 11:02:08 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 32ms (Views: 31.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 11:02:54 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003612722360 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003612722360 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/partials/_variables.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003612722360 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.css.scss to /home/mustafa/Ruby/rails_projects/atlob_app/app/assets/stylesheets/main.scss. (called from _app_views_layouts_application_html_erb___3656533552034765775_70003612722360 at /home/mustafa/Ruby/rails_projects/atlob_app/app/views/layouts/application.html.erb:5)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 1608ms (Views: 1606.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/main.self-71f2c079bebdeb2bd260aa6f04d37b5e71eb5e12bf695980462762708c47c075.css?body=1" for 127.0.0.1 at 2016-04-21 11:02:56 +0200
+
+
+Started GET "/assets/application.self-a16e4bab443b29751699fa3379e9f1478d0d06246d22eb8606f33348d2c75810.css?body=1" for 127.0.0.1 at 2016-04-21 11:02:56 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 11:03:01 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 11:03:13 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 412ms (Views: 399.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 11:04:02 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 57ms (Views: 56.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 11:08:15 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 28ms (Views: 27.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 11:36:53 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateOrder (20160420005905)
+  [1m[35m (345.2ms)[0m  CREATE TABLE `orders` (`id` int(11) auto_increment PRIMARY KEY, `for` varchar(255) NOT NULL, `res_name` varchar(255) NOT NULL, `avatar` varchar(255) NOT NULL, `status` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `user_id` int(11),  INDEX `index_orders_on_user_id`  (`user_id`) ) ENGINE=InnoDB
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160420005905')
+  [1m[36m (36.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateGroups (20160420010844)
+  [1m[35m (0.6ms)[0m  CREATE UNIQUE INDEX `index_groups_on_name`  ON `groups` (`name`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateGroups (20160420010844)
+  [1m[35m (0.5ms)[0m  CREATE UNIQUE INDEX `index_groups_on_name`  ON `groups` (`name`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateFriendships (20160420142629)
+  [1m[35m (323.8ms)[0m  CREATE TABLE `friendships` (`id` int(11) auto_increment PRIMARY KEY, `friend_id` int(11), `user_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160420142629')
+  [1m[36m (39.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (53.6ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'friendships'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `friendships`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'orders'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `orders`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `users`
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateInvited (20160420015258)
+  [1m[35m (374.2ms)[0m  CREATE TABLE `inviteds` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `order_id` int(11),  INDEX `index_inviteds_on_user_id`  (`user_id`) ,  INDEX `index_inviteds_on_order_id`  (`order_id`) ) ENGINE=InnoDB
+  [1m[36m (623.0ms)[0m  [1mALTER TABLE `inviteds` ADD CONSTRAINT `fk_rails_3e28438db8`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (780.4ms)[0m  ALTER TABLE `inviteds` ADD CONSTRAINT `fk_rails_1d894a0011`
+FOREIGN KEY (`order_id`)
+  REFERENCES `orders` (`id`)
+
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160420015258')
+  [1m[36m (40.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'friendships'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `friendships`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'inviteds'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `inviteds`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'orders'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `orders`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `users`
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateOrdetails (20160420174143)
+  [1m[35m (336.0ms)[0m  CREATE TABLE `ordetails` (`id` int(11) auto_increment PRIMARY KEY, `item` varchar(255), `price` float, `amount` int(11), `comment` text, `user_id` int(11), `order_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_ordetails_on_user_id`  (`user_id`) ,  INDEX `index_ordetails_on_order_id`  (`order_id`) ) ENGINE=InnoDB
+  [1m[36m (801.8ms)[0m  [1mALTER TABLE `ordetails` ADD CONSTRAINT `fk_rails_890e2adf41`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (660.3ms)[0m  ALTER TABLE `ordetails` ADD CONSTRAINT `fk_rails_a0ecbb79c1`
+FOREIGN KEY (`order_id`)
+  REFERENCES `orders` (`id`)
+
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160420174143')
+  [1m[36m (62.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (30.1ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'friendships'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `friendships`
+  [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'inviteds'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `inviteds`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'orders'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `orders`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'ordetails'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `ordetails`
+  [1m[36m (0.8ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `users`
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+Migrating to CreateOrdetails (20160420174143)
+  [1m[36m (210.4ms)[0m  [1mDROP TABLE `ordetails`[0m
+  [1m[35mSQL (31.1ms)[0m  DELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20160420174143'
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'friendships'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `friendships`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'inviteds'
+
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `inviteds`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'orders'
+
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `orders`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'users'
+
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `users`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+Migrating to CreateFriendships (20160420142629)
+  [1m[36m (124.2ms)[0m  [1mDROP TABLE `friendships`[0m
+  [1m[35mSQL (62.3ms)[0m  DELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20160420142629'
+  [1m[36mActiveRecord::SchemaMigration Load (64.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'inviteds'
+
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `inviteds`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'orders'
+
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `orders`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'users'
+
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `users`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+Migrating to CreateInvited (20160420015258)
+  [1m[36m (211.2ms)[0m  [1mDROP TABLE `inviteds`[0m
+  [1m[35mSQL (52.8ms)[0m  DELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20160420015258'
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'orders'
+
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `orders`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'users'
+
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `users`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+Migrating to CreateOrder (20160420005905)
+  [1m[36m (110.8ms)[0m  [1mDROP TABLE `orders`[0m
+  [1m[35mSQL (31.3ms)[0m  DELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20160420005905'
+  [1m[36mActiveRecord::SchemaMigration Load (62.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'users'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `users`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateFriendships (20160420142629)
+  [1m[35m (257.5ms)[0m  CREATE TABLE `friendships` (`id` int(11) auto_increment PRIMARY KEY, `friend_id` int(11), `user_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160420142629')
+  [1m[36m (27.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'friendships'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `friendships`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `users`
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateGroups (20160420010844)
+  [1m[35m (0.5ms)[0m  CREATE UNIQUE INDEX `index_groups_on_name`  ON `groups` (`name`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateGroups (20160420010844)
+  [1m[35m (680.0ms)[0m  CREATE TABLE `groups` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `user_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_groups_on_user_id`  (`user_id`) ) ENGINE=InnoDB
+  [1m[36m (637.0ms)[0m  [1mALTER TABLE `groups` ADD CONSTRAINT `fk_rails_5e78cd340a`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20160420010844')[0m
+  [1m[35m (84.9ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (41.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'friendships'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `friendships`[0m
+  [1m[35m (0.2ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'groups'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `groups`[0m
+  [1m[35m (0.2ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'users'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `users`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateUsgroups (20160420170350)
+  [1m[35m (391.7ms)[0m  CREATE TABLE `usgroups` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `group_id` int(11),  INDEX `index_usgroups_on_user_id`  (`user_id`) ,  INDEX `index_usgroups_on_group_id`  (`group_id`) ) ENGINE=InnoDB
+  [1m[36m (737.2ms)[0m  [1mALTER TABLE `usgroups` ADD CONSTRAINT `fk_rails_27f2bf5bce`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (657.3ms)[0m  ALTER TABLE `usgroups` ADD CONSTRAINT `fk_rails_3a00ccd3a0`
+FOREIGN KEY (`group_id`)
+  REFERENCES `groups` (`id`)
+
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160420170350')
+  [1m[36m (36.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'friendships'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `friendships`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'groups'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `groups`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `users`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'usgroups'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `usgroups`
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateInvited (20160420015258)
+  [1m[35m (446.8ms)[0m  CREATE TABLE `inviteds` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `order_id` int(11),  INDEX `index_inviteds_on_user_id`  (`user_id`) ,  INDEX `index_inviteds_on_order_id`  (`order_id`) ) ENGINE=InnoDB
+  [1m[36m (682.1ms)[0m  [1mALTER TABLE `inviteds` ADD CONSTRAINT `fk_rails_3e28438db8`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (280.3ms)[0m  ALTER TABLE `inviteds` ADD CONSTRAINT `fk_rails_1d894a0011`
+FOREIGN KEY (`order_id`)
+  REFERENCES `orders` (`id`)
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateOrders (20160420215205)
+  [1m[35m (289.2ms)[0m  CREATE TABLE `orders` (`id` int(11) auto_increment PRIMARY KEY, `for` varchar(255), `res_name` varchar(255), `avatar` varchar(255), `status` varchar(255), `user_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160420215205')
+  [1m[36m (68.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (42.6ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'friendships'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `friendships`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'groups'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `groups`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'inviteds'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `inviteds`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'orders'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `orders`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `users`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'usgroups'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `usgroups`
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateInvited (20160420015258)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateOrdetails (20160420174143)
+  [1m[35m (368.9ms)[0m  CREATE TABLE `ordetails` (`id` int(11) auto_increment PRIMARY KEY, `item` varchar(255), `price` float, `amount` int(11), `comment` text, `user_id` int(11), `order_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_ordetails_on_user_id`  (`user_id`) ,  INDEX `index_ordetails_on_order_id`  (`order_id`) ) ENGINE=InnoDB
+  [1m[36m (813.5ms)[0m  [1mALTER TABLE `ordetails` ADD CONSTRAINT `fk_rails_890e2adf41`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (627.6ms)[0m  ALTER TABLE `ordetails` ADD CONSTRAINT `fk_rails_a0ecbb79c1`
+FOREIGN KEY (`order_id`)
+  REFERENCES `orders` (`id`)
+
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160420174143')
+  [1m[36m (35.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'friendships'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `friendships`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'groups'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `groups`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'inviteds'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `inviteds`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'orders'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `orders`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'ordetails'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `ordetails`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `users`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'usgroups'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `usgroups`
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateInvited (20160420015258)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateInvited (20160420015258)
+  [1m[35m (396.1ms)[0m  CREATE TABLE `inviteds` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `order_id` int(11),  INDEX `index_inviteds_on_user_id`  (`user_id`) ,  INDEX `index_inviteds_on_order_id`  (`order_id`) ) ENGINE=InnoDB
+  [1m[36m (745.5ms)[0m  [1mALTER TABLE `inviteds` ADD CONSTRAINT `fk_rails_3e28438db8`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (680.8ms)[0m  ALTER TABLE `inviteds` ADD CONSTRAINT `fk_rails_1d894a0011`
+FOREIGN KEY (`order_id`)
+  REFERENCES `orders` (`id`)
+
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160420015258')
+  [1m[36m (62.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (26.8ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'friendships'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `friendships`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'groups'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `groups`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'inviteds'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `inviteds`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'orders'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `orders`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'ordetails'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `ordetails`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `users`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'usgroups'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `usgroups`
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 14:22:24 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 1184ms (Views: 1164.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 14:22:25 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 30ms (Views: 29.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2016-04-21 14:22:53 +0200
+Processing by GroupsController#index as HTML
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/mustafa/Ruby/rails_projects/atlob_app/app/models/group.rb:5: syntax error, unexpected ':', expecting keyword_end
+  has_many :usgroups, :dependent  :destroy  
+                                   ^):
+  app/models/group.rb:5: syntax error, unexpected ':', expecting keyword_end
+  app/controllers/groups_controller.rb:7:in `index'
+
+
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (127.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (148.4ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2016-04-21 14:24:59 +0200
+Processing by GroupsController#index as HTML
+  [1m[35mGroup Load (0.3ms)[0m  SELECT `groups`.* FROM `groups`
+  Rendered groups/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 74ms (Views: 67.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2016-04-21 14:25:08 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (1.3ms)[0m  SELECT `orders`.* FROM `orders`
+  Rendered orders/index.html.erb within layouts/application (6.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 50ms (Views: 39.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2016-04-21 14:26:26 +0200
+Processing by OrdersController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered orders/_form.html.erb (219.0ms)
+  Rendered orders/new.html.erb within layouts/application (220.3ms)
+Completed 200 OK in 279ms (Views: 247.1ms | ActiveRecord: 1.6ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateNotifications (20160421123239)
+  [1m[35m (264.4ms)[0m  CREATE TABLE `notifications` (`id` int(11) auto_increment PRIMARY KEY, `recipient_id` int(11), `actor_id` int(11), `read_at` datetime, `action` varchar(255), `notifiable_id` int(11), `notifiable_type` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160421123239')
+  [1m[36m (29.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'friendships'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `friendships`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'groups'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `groups`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'inviteds'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `inviteds`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'notifications'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `notifications`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'orders'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `orders`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'ordetails'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `ordetails`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `users`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'atlob_development'
+  AND fk.table_name = 'usgroups'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `usgroups`
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 15:12:09 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 461ms (Views: 449.5ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-04-21 15:12:11 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YoFKlCoJjnIAdubpH1PhyRhjRpV7llJF70C5rBEQlEF8z2blS6e4Q7g2In5uGpje6XJf3hBtpyKCZhSBO9eKng=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 15ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-21 15:12:11 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (67.2ms)
+Completed 200 OK in 130ms (Views: 123.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 15:12:16 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 15:12:17 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQCVGnoE0f8jmqXbNtYwmOsGks6xaxFhhWxDVHKJZ0OoCuvkWRm0I_VJwSGPtsmwChMftWhowonhaeUtWvAfWsymAqBFthqOtC6Y476M6NC5ruJ04p7BFBiSj0K__UMsgIFKq6HHwMZu7y8MVXSfaW9o8LDQkl3yzLCGqZb2KJfA2r9_JXqkf9KZaWvC1cbKW7KAe1ZhpTeo4qQCI0Vjfiq6du_8T6CIWy9MIAluU19PMNMwfaobWzhZXRXtflpCuwiXgZNmzDCZ6G0ZlxznxOMhnYE5PrG656slv3sIfZwL6vorJ0r5Hrn97KPhv99UOX5FzQts9WGz-UtD2uEYa8xd&state=21ba5c16437e84b3897f7b8a6829f732e32e144e4f82b58f" for 127.0.0.1 at 2016-04-21 15:12:28 +0200
+
+Faraday::ConnectionFailed (execution expired):
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/net/http.rb:880:in `initialize'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/net/http.rb:880:in `open'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/net/http.rb:880:in `block in connect'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/timeout.rb:101:in `timeout'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/net/http.rb:878:in `connect'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/net/http.rb:863:in `do_start'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/net/http.rb:852:in `start'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/net/http.rb:1398:in `request'
+  faraday (0.9.2) lib/faraday/adapter/net_http.rb:82:in `perform_request'
+  faraday (0.9.2) lib/faraday/adapter/net_http.rb:40:in `block in call'
+  faraday (0.9.2) lib/faraday/adapter/net_http.rb:87:in `with_net_http_connection'
+  faraday (0.9.2) lib/faraday/adapter/net_http.rb:32:in `call'
+  faraday (0.9.2) lib/faraday/request/url_encoded.rb:15:in `call'
+  faraday (0.9.2) lib/faraday/rack_builder.rb:139:in `build_response'
+  faraday (0.9.2) lib/faraday/connection.rb:377:in `run_request'
+  oauth2 (1.1.0) lib/oauth2/client.rb:93:in `request'
+  oauth2 (1.1.0) lib/oauth2/client.rb:138:in `get_token'
+  oauth2 (1.1.0) lib/oauth2/strategy/auth_code.rb:29:in `get_token'
+  omniauth-oauth2 (1.4.0) lib/omniauth/strategies/oauth2.rb:89:in `build_access_token'
+  omniauth-facebook (3.0.0) lib/omniauth/strategies/facebook.rb:114:in `build_access_token'
+  omniauth-oauth2 (1.4.0) lib/omniauth/strategies/oauth2.rb:73:in `callback_phase'
+  omniauth-facebook (3.0.0) lib/omniauth/strategies/facebook.rb:71:in `block in callback_phase'
+  omniauth-facebook (3.0.0) lib/omniauth/strategies/facebook.rb:135:in `with_authorization_code!'
+  omniauth-facebook (3.0.0) lib/omniauth/strategies/facebook.rb:70:in `callback_phase'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:227:in `callback_call'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.3.1) lib/omniauth/builder.rb:63:in `call'
+  warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.6) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (22.7ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (41.2ms)
+
+
+Started GET "/users/auth/facebook/callback?code=AQBQ2nh5To0yJmUnJTM--eJs0S7sTHi6nUGHaEgzMcjy3UEq34hDxARmgw_S1ZYtU2ZCKfGT5joRb_-yWkv5JDZXAyUyCDYfMNESHVpwx3lOQ00EbIZkbvbYjPk_wUghRKc73o1bRa_N6VIqhXKjSHBURjnxR2rdFtpuHtib-WVnyjpDBuF45lkFawc7r4ktW6Ka9D0RznO79A_etzCP2Bm9uwvY_WrY_HS4QJlj6z-2SaU348Zl0mHsxdrlMRTHGEe5aQdSzKnQp0PJYkwXxYnyKqFx5sW07pbfgZ4UScwIFCH_ozHO_olPrk8HlM2OrK0WFvS6lugh_kT5nZo-mY5b&state=21ba5c16437e84b3897f7b8a6829f732e32e144e4f82b58f" for 127.0.0.1 at 2016-04-21 15:13:38 +0200
+
+Faraday::ConnectionFailed (execution expired):
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/net/http.rb:880:in `initialize'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/net/http.rb:880:in `open'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/net/http.rb:880:in `block in connect'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/timeout.rb:101:in `timeout'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/net/http.rb:878:in `connect'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/net/http.rb:863:in `do_start'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/net/http.rb:852:in `start'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/net/http.rb:1398:in `request'
+  faraday (0.9.2) lib/faraday/adapter/net_http.rb:82:in `perform_request'
+  faraday (0.9.2) lib/faraday/adapter/net_http.rb:40:in `block in call'
+  faraday (0.9.2) lib/faraday/adapter/net_http.rb:87:in `with_net_http_connection'
+  faraday (0.9.2) lib/faraday/adapter/net_http.rb:32:in `call'
+  faraday (0.9.2) lib/faraday/request/url_encoded.rb:15:in `call'
+  faraday (0.9.2) lib/faraday/rack_builder.rb:139:in `build_response'
+  faraday (0.9.2) lib/faraday/connection.rb:377:in `run_request'
+  oauth2 (1.1.0) lib/oauth2/client.rb:93:in `request'
+  oauth2 (1.1.0) lib/oauth2/client.rb:138:in `get_token'
+  oauth2 (1.1.0) lib/oauth2/strategy/auth_code.rb:29:in `get_token'
+  omniauth-oauth2 (1.4.0) lib/omniauth/strategies/oauth2.rb:89:in `build_access_token'
+  omniauth-facebook (3.0.0) lib/omniauth/strategies/facebook.rb:114:in `build_access_token'
+  omniauth-oauth2 (1.4.0) lib/omniauth/strategies/oauth2.rb:73:in `callback_phase'
+  omniauth-facebook (3.0.0) lib/omniauth/strategies/facebook.rb:71:in `block in callback_phase'
+  omniauth-facebook (3.0.0) lib/omniauth/strategies/facebook.rb:135:in `with_authorization_code!'
+  omniauth-facebook (3.0.0) lib/omniauth/strategies/facebook.rb:70:in `callback_phase'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:227:in `callback_call'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.3.1) lib/omniauth/builder.rb:63:in `call'
+  warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.6) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.2ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (3.1ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (21.8ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (37.8ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 15:14:39 +0200
+
+
+Started GET "/users/index.html" for 127.0.0.1 at 2016-04-21 15:14:39 +0200
+
+ActionController::RoutingError (uninitialized constant UsersController):
+  activesupport (4.2.6) lib/active_support/inflector/methods.rb:261:in `const_get'
+  activesupport (4.2.6) lib/active_support/inflector/methods.rb:261:in `block in constantize'
+  activesupport (4.2.6) lib/active_support/inflector/methods.rb:259:in `each'
+  activesupport (4.2.6) lib/active_support/inflector/methods.rb:259:in `inject'
+  activesupport (4.2.6) lib/active_support/inflector/methods.rb:259:in `constantize'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:70:in `controller_reference'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:60:in `controller'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:39:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.3.1) lib/omniauth/builder.rb:63:in `call'
+  warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.6) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.1ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (13.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (77.0ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.9ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (35.4ms)
+
+
+Started GET "/users/index.html" for 127.0.0.1 at 2016-04-21 15:14:39 +0200
+
+ActionController::RoutingError (uninitialized constant UsersController):
+  activesupport (4.2.6) lib/active_support/inflector/methods.rb:261:in `const_get'
+  activesupport (4.2.6) lib/active_support/inflector/methods.rb:261:in `block in constantize'
+  activesupport (4.2.6) lib/active_support/inflector/methods.rb:259:in `each'
+  activesupport (4.2.6) lib/active_support/inflector/methods.rb:259:in `inject'
+  activesupport (4.2.6) lib/active_support/inflector/methods.rb:259:in `constantize'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:70:in `controller_reference'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:60:in `controller'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:39:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.3.1) lib/omniauth/builder.rb:63:in `call'
+  warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.6) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/mustafa/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.7ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (62.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (22.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/mustafa/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (37.1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-21 15:14:51 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 55ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 15:14:53 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 15:14:54 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQAqfhHnFQncyfAuitxX7NPuMOrsIibDakg7tkdIzPHB77BxpZbMFE61MbyzzbAbYCmbyYCxBJnQLRQ6mGv6ioFsP9dSuHYw8ndy-CAGH7nI3FyyOK71MO2anElZYqoDnCYRVVien-lwIZCNW6PSUUcHNtAYZZ2uzKC1NIfpAEzggnjpE0uilNCpHWi-t9Ycp5V1Md7RmEWCYIJtK9GPw7kumGiQyfkOLF10WCJoXigtfTMpX31gMh_6QwXX1JT3L7rMfuRV1OrCrlAOnBAdadveWUjt7C7DF4ugY4Ea4ImjS0RIaGBa0jmBgT-A20Yod0__75MUv8MBDKyxZ58WELUu&state=2da68f94f2a342c78553af0f3e4e1c64bf0d2d7ad4e68feb" for 127.0.0.1 at 2016-04-21 15:14:54 +0200
+Processing by CallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAqfhHnFQncyfAuitxX7NPuMOrsIibDakg7tkdIzPHB77BxpZbMFE61MbyzzbAbYCmbyYCxBJnQLRQ6mGv6ioFsP9dSuHYw8ndy-CAGH7nI3FyyOK71MO2anElZYqoDnCYRVVien-lwIZCNW6PSUUcHNtAYZZ2uzKC1NIfpAEzggnjpE0uilNCpHWi-t9Ycp5V1Md7RmEWCYIJtK9GPw7kumGiQyfkOLF10WCJoXigtfTMpX31gMh_6QwXX1JT3L7rMfuRV1OrCrlAOnBAdadveWUjt7C7DF4ugY4Ea4ImjS0RIaGBa0jmBgT-A20Yod0__75MUv8MBDKyxZ58WELUu", "state"=>"2da68f94f2a342c78553af0f3e4e1c64bf0d2d7ad4e68feb"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`provider` = 'facebook' AND `users`.`uid` = '1147615865279263'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2016-04-21 09:02:08', `current_sign_in_at` = '2016-04-21 13:14:57', `sign_in_count` = 10, `updated_at` = '2016-04-21 13:14:57' WHERE `users`.`id` = 1
+  [1m[36m (32.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 38ms (ActiveRecord: 32.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 15:14:57 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 36ms (Views: 35.0ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-04-21 15:15:14 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"TzL2ziwZwOVpcHDP7QewsF2WlE+EXdZ5I46QEjp3fvRVsg3zCvQ1tfXcPomgJ5FqFruJfKg8E8GLej6Nf2GwGQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-21 15:15:14 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 15:15:18 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 15:15:18 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQC9KAIEPrPIWZCvt5gtGLGUD3SosKTKoogLFoZFvo77Eu1IaMjP6nV3PTZlB72cxBEf0stznTIj_WmVmrjpuvg-k72e8aSVYfSx2lWZMxTq3hvxqIN4Tm0-CCuN7WI0NOsqMClkwMufsTATpeW9tsHAgJgNgA4zPc3UXQfxIlNlPQYpld-jKjJukBtUwnDvP5dYlseKyQ6Z2WYVEtuoYnjhKW7Gu8UbHGAeq-d5yvusDwONFWpxsZghCIMmxXNgtO9KAVaDUb31ZTt_VdNiJnjAlLE4vrhFy6kOVrJAVxnhedyFZdQVHDO1FS9jRxVV87cB9wtrOjEXlhKZtrmTm0I6&state=89b638410b06ff7018a6285cbf77777cdba21dd1ce3208c5" for 127.0.0.1 at 2016-04-21 15:15:18 +0200
+Processing by CallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQC9KAIEPrPIWZCvt5gtGLGUD3SosKTKoogLFoZFvo77Eu1IaMjP6nV3PTZlB72cxBEf0stznTIj_WmVmrjpuvg-k72e8aSVYfSx2lWZMxTq3hvxqIN4Tm0-CCuN7WI0NOsqMClkwMufsTATpeW9tsHAgJgNgA4zPc3UXQfxIlNlPQYpld-jKjJukBtUwnDvP5dYlseKyQ6Z2WYVEtuoYnjhKW7Gu8UbHGAeq-d5yvusDwONFWpxsZghCIMmxXNgtO9KAVaDUb31ZTt_VdNiJnjAlLE4vrhFy6kOVrJAVxnhedyFZdQVHDO1FS9jRxVV87cB9wtrOjEXlhKZtrmTm0I6", "state"=>"89b638410b06ff7018a6285cbf77777cdba21dd1ce3208c5"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`provider` = 'facebook' AND `users`.`uid` = '1147615865279263'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2016-04-21 13:14:57', `current_sign_in_at` = '2016-04-21 13:15:19', `sign_in_count` = 11, `updated_at` = '2016-04-21 13:15:19' WHERE `users`.`id` = 1
+  [1m[36m (44.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 51ms (ActiveRecord: 45.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 15:15:19 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-04-21 15:15:32 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"fs6g13cvQUTM4HZWCvMS5pi4pUOvGqBln2FxidF/EDRyL/XUej7Rzwe4s77T53TvqUvd4fNu59u/l+1PzTTpLA=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-21 15:15:32 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 15:15:34 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 15:15:34 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQBHlXmYVR5ZJ5aP0N5gl1X6paLGsVCQnO8V4SbbcmSxAVdt9VAwUJto_lYaCFaP0Ri1f0KLZweRfx2MEsiZ2A9i-rZ5J9VYcMwi8AlpFTfy3FnTEX57EmC-BikaZC2R3T_yUE_yEJ_P6QTdcK6tGYN2Uh4hh5m-hAGIb2_TgTLUVo8uqrGRxg_QiYPWaSAHimn7WxxBIhku3up9rUfbxLrniQ-z3dkhrocCEUc7wdTTz7NAfftRbGWEx-mTfTLsVNTfmw7-aEo2_QazbZ4AoN5GjgDH6bjCAywSj7mBtMhg3BDSqQqQ0e-_Frzeukt7mAHd9ZWQ70rhkIoivLGOV8ei&state=c8c9d0f93cd0e62af8303ca5dfd0d837c9cb3947b62ffba4" for 127.0.0.1 at 2016-04-21 15:15:35 +0200
+Processing by CallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBHlXmYVR5ZJ5aP0N5gl1X6paLGsVCQnO8V4SbbcmSxAVdt9VAwUJto_lYaCFaP0Ri1f0KLZweRfx2MEsiZ2A9i-rZ5J9VYcMwi8AlpFTfy3FnTEX57EmC-BikaZC2R3T_yUE_yEJ_P6QTdcK6tGYN2Uh4hh5m-hAGIb2_TgTLUVo8uqrGRxg_QiYPWaSAHimn7WxxBIhku3up9rUfbxLrniQ-z3dkhrocCEUc7wdTTz7NAfftRbGWEx-mTfTLsVNTfmw7-aEo2_QazbZ4AoN5GjgDH6bjCAywSj7mBtMhg3BDSqQqQ0e-_Frzeukt7mAHd9ZWQ70rhkIoivLGOV8ei", "state"=>"c8c9d0f93cd0e62af8303ca5dfd0d837c9cb3947b62ffba4"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`provider` = 'facebook' AND `users`.`uid` = '1147615865279263'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2016-04-21 13:15:19', `current_sign_in_at` = '2016-04-21 13:15:36', `sign_in_count` = 12, `updated_at` = '2016-04-21 13:15:36' WHERE `users`.`id` = 1
+  [1m[36m (63.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 69ms (ActiveRecord: 64.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 15:15:36 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-04-21 15:15:39 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YXxUDkpalSwvWVYKPANmS5oHOXb4JKBGPREs17VDHCxVWGXWQbFAaVFBRbFsS2rYg0qlTF15JaM3mVgWi2Q3Vw=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-21 15:15:39 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 54ms (Views: 53.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 15:15:41 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 15:15:41 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQB-BiKjzn0DJL0fBCHxrLBt4nW3dXCdLyl2ygiClmQ9L0rTUrexStJs5g5Jqr8lxIFvkWxLzoc1SDRLWzI047jbq7dCXpQV_1gFhOzHigiO7bi1aZJ2pbsUHIeuZwrzraHRDHxkaZCeEaynDm6MhmtUcJPwrGS2GwZwqWhGNy-tTRYWlBgJ0jOUbl0XoU5DxAwPSI9Z2532L5SW59QvCpgSGdf53VUNH2VoRRIrFH8bKAK5XwtJ0eGn_V7T3jXPbeTEMEmqPxZS6B6Ysp3N6mP0uEcFR5jhOVmJ-7LTs58DI88tV1Q5VeneNtQAmtvh6wUxjeR7i8vXqdX_ZRSbFlVY&state=6fb14eabe6d470064412c409ee44508a76cdca637f546813" for 127.0.0.1 at 2016-04-21 15:15:41 +0200
+Processing by CallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQB-BiKjzn0DJL0fBCHxrLBt4nW3dXCdLyl2ygiClmQ9L0rTUrexStJs5g5Jqr8lxIFvkWxLzoc1SDRLWzI047jbq7dCXpQV_1gFhOzHigiO7bi1aZJ2pbsUHIeuZwrzraHRDHxkaZCeEaynDm6MhmtUcJPwrGS2GwZwqWhGNy-tTRYWlBgJ0jOUbl0XoU5DxAwPSI9Z2532L5SW59QvCpgSGdf53VUNH2VoRRIrFH8bKAK5XwtJ0eGn_V7T3jXPbeTEMEmqPxZS6B6Ysp3N6mP0uEcFR5jhOVmJ-7LTs58DI88tV1Q5VeneNtQAmtvh6wUxjeR7i8vXqdX_ZRSbFlVY", "state"=>"6fb14eabe6d470064412c409ee44508a76cdca637f546813"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`provider` = 'facebook' AND `users`.`uid` = '1147615865279263'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2016-04-21 13:15:36', `current_sign_in_at` = '2016-04-21 13:15:42', `sign_in_count` = 13, `updated_at` = '2016-04-21 13:15:42' WHERE `users`.`id` = 1
+  [1m[36m (63.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 71ms (ActiveRecord: 64.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 15:15:42 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 36ms (Views: 35.5ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-04-21 15:15:49 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NydqIpBHVIICHxGkp0tG+13MZJe+5n6q0VZJ5uJfxc8ug4Pz+JzvjhqRS3dbHvdo8MAGj6HYGNkP1LcR2nh/lQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-21 15:15:49 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 48ms (Views: 46.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2016-04-21 15:15:51 +0200
+
+
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2016-04-21 15:15:51 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 15:15:55 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 15:15:56 +0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQAKZUbwynnsW84rQrX5DySMhiJc7qN1VUQSOtReNDhgP2nEC2r4bBPa1vaFUVRJS8K2tJIc_tZaAvQTeeQTT508tshB7JUexUMgqyoqfK_lGfQX2F9zurGrZZya1DfC34vVSMNBplfJ1b52vi2BXvhuAGpRmdWlau6bi5E3fWWalG_usSPpRAeMMmbjt0BaqMF0kUTM5gdi-ItdMXUNQwzgHIVaRfBlfgsCu-j4Y3Y8mQf9mUgD1eiTt0pudlCu2Swl4mHB4nZ3oG-7iDthvqMBe3Ko438HdgHyNFd8_GEkkxdAG_x2oonOVM9Ppl8FCc2_FTCnxV2wdsPEknqBAfoQ&state=5f24e9b9b46104bf251a9e10abbcec4848f005ac159ebb0b" for 127.0.0.1 at 2016-04-21 15:15:56 +0200
+Processing by CallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAKZUbwynnsW84rQrX5DySMhiJc7qN1VUQSOtReNDhgP2nEC2r4bBPa1vaFUVRJS8K2tJIc_tZaAvQTeeQTT508tshB7JUexUMgqyoqfK_lGfQX2F9zurGrZZya1DfC34vVSMNBplfJ1b52vi2BXvhuAGpRmdWlau6bi5E3fWWalG_usSPpRAeMMmbjt0BaqMF0kUTM5gdi-ItdMXUNQwzgHIVaRfBlfgsCu-j4Y3Y8mQf9mUgD1eiTt0pudlCu2Swl4mHB4nZ3oG-7iDthvqMBe3Ko438HdgHyNFd8_GEkkxdAG_x2oonOVM9Ppl8FCc2_FTCnxV2wdsPEknqBAfoQ", "state"=>"5f24e9b9b46104bf251a9e10abbcec4848f005ac159ebb0b"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`provider` = 'facebook' AND `users`.`uid` = '1147615865279263'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2016-04-21 13:15:42', `current_sign_in_at` = '2016-04-21 13:15:58', `sign_in_count` = 14, `updated_at` = '2016-04-21 13:15:58' WHERE `users`.`id` = 1
+  [1m[36m (45.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 55ms (ActiveRecord: 46.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 15:15:58 +0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 200 OK in 36ms (Views: 35.5ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-04-21 15:16:22 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5i+cGx6UjWCc1nHOkKP5DMG8FaSk4EltVjbjnqgMj7nOpLtZOtYYIOLv7Y2k56EmyRuEeoPIpvmpW7uHLjhQtA=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-21 15:16:22 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 38ms (Views: 37.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 15:16:24 +0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-04-21 15:16:25 +0200

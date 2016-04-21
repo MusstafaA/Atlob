@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
  
+  resources :ordetails
+  resources :usgroups
+  resources :friendships
+  resources :groups
+  resources :orders
+  resources :inviteds
+  resources :friendships
   #devise_for :users
   #devise_for :users
  # devise_for :models
@@ -65,6 +72,43 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+    resources :users do
+    resources :orders
+  end
+   resources :users do
+    resources :groups
+  end
+
+   resources :users do
+    resources :inviteds
+  end
+
+   resources :orders do
+       resources :inviteds
+    end
+
+  resources :users do
+       resources :friendships
+    end
+
+   resources :users do
+       resources :usgroups
+    end
+      
+   resources :groups do
+       resources :usgroups
+    end
+
+
+
+    resources :users do
+    resources :ordetails
+  end
+
+   resources :orders do
+       resources :ordetails
+    end
+
 
   
 end
