@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Orders</h1>
+
+<%= link_to 'New Order', new_order_path ,:class =>'btn btn-default' %>
+<br> <br>
+<table class='col-md-8 col-lg-8 col-sm-4 col-xs-12 table table-hover table-striped table-bordered'>
+  <thead>
+    <tr>
+      <th>Order</th>
+      <th>Resturant name</th>
+      <th>Status</th>
+      <th>Invited</th>
+      <th>Joined</th>
+      
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%  @orders.each do |order| %>
+      <tr>
+        <td><%= order.for %></td>
+        <td><%= order.res_name %></td>
+        <td><%= order.status %></td>
+        <td><%= order.inviteds.length %></td>
+        <td><%= order.ordetails.length %></td>
+        <td ><%= link_to 'Show', order ,:class => 'btn btn-default'%></td>
+        <td><%=  link_to 'Finish', edit_order_path(order), :class => 'btn btn-default' %></td>
+        <td><%=  link_to 'Destroy',order, method: :delete,:class => 'btn btn-default' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<div class="flickr_pagination">
+    <div class="page_info">
+      <%= page_entries_info @orders %>
+    </div>
+    <%= will_paginate @orders, :container => false %>
+  </div>
+

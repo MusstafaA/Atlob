@@ -21,22 +21,19 @@
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
-  <div class="field">
+    <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+    </div>
   
- <div class="field">
-  <%= f.radio_button :gender, 'female', :checked => true %> 
-  <%= label :gender, 'female' %>
-  <%= f.radio_button :gender, 'male' %>
-  <%= label :gender, 'male' %>
+<<<<<<< HEAD
 
-  </div>
+=======
+>>>>>>> d41ec470244179f437a56f4df477a3dea3073474
       
     <div class="field">
     <%= f.label :uploadfile %>
-     <%= f.file_field :avatar,  :accept => 'image/*' %>
+    <%= f.file_field :avatar,  :accept => 'image/*' %>
     </div>
 
   <div class="actions">
