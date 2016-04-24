@@ -1,12 +1,19 @@
 <h2>Log in</h2>
 
+<%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
+<%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
+<%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
+
+
 <div class="row">
   <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4"></div>
 
   <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
 
             <%= form_for(resource, as: resource_name, url: session_path(resource_name) , :html => { :class => "form-horizontal" }) do |f| %>
-              <div class="field form-group">
+
+          
+               <div class="field form-group">
                  
                       <%= f.label :email %><br />
                   

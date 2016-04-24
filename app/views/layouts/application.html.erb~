@@ -49,9 +49,11 @@
 
             </li>
 
-            <li><a href="#">Image</a></li>
-            <li><a href="#">Username</a></li>
-            <li><%= link_to 'Logout', destroy_user_session_path ,method: :delete %></li>
+            <li><a href="#"><img class='img-circle'  width='50px' height='40px' src="<%= current_user.avatar%>" /></a></li>
+            
+             <li><%= link_to  current_user.name  , '/users/edit' %></li>
+            
+            <li><%=  link_to 'Logout', destroy_user_session_path ,method: :delete %></li>
           </ul>
 
 

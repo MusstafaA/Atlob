@@ -15,10 +15,31 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
    def show
-       
+           
    end
+ # GET /orders/joined
+   
+   def joined 
+       
+       @joined=current_user.ordetails
+       
+       @order_ids=[]
+       
+       @i=0
+      
+       @joined.each  do |j|
+     
+         @order_ids[@i]=j.order_id
+        
+         @i=@i+1
+  
+     end
+    
+      @orders=Order.where(:id => @order_ids).paginate(:page => params[:page],  :per_page => 3)
 
-  # GET /orders/new
+   end 
+  
+ # GET /orders/new
   
   def new
      
@@ -136,7 +157,8 @@ class OrdersController < ApplicationController
 
           @invitedusers.each do |invited| 
               @inviteduser=User.where(:id => invited.user_id) 
-              Notification.create(recipient: @inviteduser, actor: current_user, action: "invited", notifiable: @order )
+         
+              Notification.create(recipient: @inviteduser, actor: current_user , action: "invited", notifiable: @order )
         
          end     
       
