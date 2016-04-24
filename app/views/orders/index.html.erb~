@@ -2,7 +2,6 @@
 
 <h1>Listing Orders</h1>
 
-<<<<<<< HEAD
 <%= link_to 'New Order', new_order_path ,:class =>'btn btn-default' %>
 <br> <br>
 <table class='col-md-8 col-lg-8 col-sm-4 col-xs-12 table table-hover table-striped table-bordered'>
@@ -15,22 +14,10 @@
       <th>Joined</th>
       
       <th colspan="3">Actions</th>
-=======
-<table>
-  <thead>
-    <tr>
-      <th>For</th>
-      <th>Res name</th>
-      <th>Avatar</th>
-      <th>Status</th>
-      <th>User</th>
-      <th colspan="3"></th>
->>>>>>> eaa9087365a64842869af70530fded8fdea6e229
     </tr>
   </thead>
 
   <tbody>
-<<<<<<< HEAD
     <%  @orders.each do |order| %>
       <tr>
         <td><%=  order.for %></td>
@@ -38,28 +25,24 @@
         <td><%=  order.status %></td>
         <td><%=  order.inviteds.length %></td>
         <td><%=  order.ordetails.length %></td>
+         <% if order.status == 'waiting'%>
         <td ><%= link_to 'Show', order ,:class => 'btn btn-default'%></td>
+
         <td><%=  link_to 'Finish', edit_order_path(order), :class => 'btn btn-default' %></td>
         <td><%=  link_to 'Destroy',order, method: :delete,:class => 'btn btn-default' %></td>
-=======
-    <% @orders.each do |order| %>
-      <tr>
-        <td><%= order.for %></td>
-        <td><%= order.res_name %></td>
-        <td><%= order.avatar %></td>
-        <td><%= order.status %></td>
-        <td><%= order.user_id %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
->>>>>>> eaa9087365a64842869af70530fded8fdea6e229
       </tr>
+       <% else %>
+         
+          <td ><%=  link_to 'Show', order ,:class => 'btn btn-default'%></td>
+          <td colspan='2'></td>
+          
+             </tr>
+          <% end %>  
     <% end %>
   </tbody>
 </table>
 
 <br>
-<<<<<<< HEAD
 <div class="flickr_pagination">
     <div class="page_info">
       <%= page_entries_info @orders %>
@@ -67,7 +50,3 @@
     <%= will_paginate @orders, :container => false %>
   </div>
 
-=======
-
-<%= link_to 'New Order', new_order_path %>
->>>>>>> eaa9087365a64842869af70530fded8fdea6e229

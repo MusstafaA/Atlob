@@ -4,8 +4,10 @@ body {
   line-height: 1.6em;
 }
 
+
+
 .navbar{
-  overflow:auto;
+  //overflow:auto;
   min-height: 100px;
   background: #36424a;
   color: #fff;
@@ -129,4 +131,29 @@ footer{
   height: 60px;
   padding-top: 20px;
   margin-top: 30px;
+
+}
+
+
+#notify{
+<<<<<<< HEAD
+  
+  background: #36424a;
+=======
+  background: #36424a;
+  width:400px;
+}
+
+
+#rounded{
+
+        -moz-border-radius:10px 10px 10px 10px;  // rounds corners for firefox
+        border-radius:10px 10px 10px 10px;  //rounds corners for other browsers
+        border:solid 1px #000;
+        background:#36424a;
+        color: white;
+        padding:5px;
+  
+ 
+>>>>>>> eaa9087365a64842869af70530fded8fdea6e229
 }

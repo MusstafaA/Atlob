@@ -25,10 +25,19 @@
         <td><%=  order.status %></td>
         <td><%=  order.inviteds.length %></td>
         <td><%=  order.ordetails.length %></td>
+         <% if order.status == 'waiting'%>
         <td ><%= link_to 'Show', order ,:class => 'btn btn-default'%></td>
+
         <td><%=  link_to 'Finish', edit_order_path(order), :class => 'btn btn-default' %></td>
         <td><%=  link_to 'Destroy',order, method: :delete,:class => 'btn btn-default' %></td>
       </tr>
+       <% else %>
+         
+          <td colspan='3'><%=  link_to 'Show', order ,:class => 'btn btn-default'%></td>
+          
+          
+             </tr>
+          <% end %>  
     <% end %>
   </tbody>
 </table>
