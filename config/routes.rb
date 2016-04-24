@@ -16,8 +16,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
   
+<<<<<<< HEAD
   
   
+=======
+>>>>>>> eaa9087365a64842869af70530fded8fdea6e229
   devise_for :users, :controllers => { registrations: 'registrations' , :omniauth_callbacks => "callbacks" }
 
 
@@ -112,5 +115,28 @@ Rails.application.routes.draw do
     end
 
 
+<<<<<<< HEAD
+=======
+
+# notifications
+resources :notifications do
+  collection do
+    post :mark_as_read
+  end
+
+  end
+
+#join order
+resources :notifications do
+  collection do
+    post :join
+  end
+
+  end
+
+
+
+
+>>>>>>> eaa9087365a64842869af70530fded8fdea6e229
   
 end

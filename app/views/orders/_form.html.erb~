@@ -1,12 +1,13 @@
+<<<<<<< HEAD
 
 <%= form_for(@order) do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+      <h3 class='text-danger'><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h3>
 
       
       <% @order.errors.full_messages.each do |message| %>
-        <p><%= message %></p>
+        <p class='text-danger' ><%= message %></p>
       <% end %>
       
     </div>
@@ -16,15 +17,39 @@
   <div class="field">
     <%= f.label :for %><br>
      <%= f.select :for, ['breakfast','dinner'], :selected => 'breakfast' ,:class => 'form-control' %>
+=======
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :for %><br>
+     <%= f.select :for, ['breakfast','dinner'], :selected => 'breakfast' %>
+>>>>>>> eaa9087365a64842869af70530fded8fdea6e229
   </div>
  
   <div class="field">
     <%= f.label :restaurant_name %><br>
+<<<<<<< HEAD
     <%= f.text_field :res_name , :class => 'form-control'%>
+=======
+    <%= f.text_field :res_name %>
+>>>>>>> eaa9087365a64842869af70530fded8fdea6e229
   </div>
 
    <div class="field">
     <%= f.label :menu_image %>
+<<<<<<< HEAD
     <%= f.file_field :avatar, :class => 'form-control' , :accept => 'image/*' %>
     </div>
  
@@ -62,5 +87,13 @@
    <%= f.hidden_field :user_id,{value:current_user.id} %>
   <div class="actions">
     <%= f.submit  :class => 'form-control' , :style=> 'width:130px' %>
+=======
+    <%= f.file_field :avatar,  :accept => 'image/*' %>
+    </div>
+ 
+   <%= f.hidden_field :user_id,{value:current_user.id} %>
+  <div class="actions">
+    <%= f.submit %>
+>>>>>>> eaa9087365a64842869af70530fded8fdea6e229
   </div>
 <% end %>

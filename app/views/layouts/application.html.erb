@@ -6,8 +6,92 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body id="top">
 
+    <nav class="navbar navbar-default " >
+      <div class="container" >
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><h1>Yala Notlob</h1></a>
+        </div>
+        <%if user_signed_in? %>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Friends</a></li>
+            <li><a href="#">Groups</a></li>
+            <li><a href="#">Orders</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+
+
+
+
+            <li class="nav-item btn-group dropdown" data-behavior="notifications" >
+
+                <a class="dropdown-toggle nav-link" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-behavior="notifications-link">
+                  <i class="glyphicon glyphicon-bell"></i>
+                  <span id="rounded" data-behavior="unread-count"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="notify" data-behavior="notification-items">
+                 <!--  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li> -->
+                  
+                </ul>
+              
+
+            </li>
+
+            <li><a href="#">Image</a></li>
+            <li><a href="#">Username</a></li>
+            <li><%= link_to 'Logout', destroy_user_session_path ,method: :delete %></li>
+          </ul>
+
+
+
+        </div><!--/.nav-collapse -->
+        <% end %>
+      </div>
+    </nav>
+
+
+    <section id="middle">
+      <div class="container" >
+      	<div ></div>
+
+        <div class="row">
+          <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+
+ 
+
+    	<%= yield %>
+
+
+
+
+
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer id="foot">
+      <p>Copyright &copy; 2016, Yalla Notlob </p>
+    </footer>
+
+
+
+
+<<<<<<< HEAD
     <nav class="navbar navbar-default " id="top">
       <div class="container" >
         <div class="navbar-header">
@@ -89,6 +173,8 @@
 
 
 
+=======
+>>>>>>> eaa9087365a64842869af70530fded8fdea6e229
 
 </body>
 </html>

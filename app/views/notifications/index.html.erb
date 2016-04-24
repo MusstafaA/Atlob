@@ -1,0 +1,21 @@
+<h1>Listing Notifications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Notifications</th>
+      
+    </tr>
+  </thead>
+
+  <tbody data-behavior="notification-list">
+    <% @all_notfications.each do |notification| %>
+      <tr>
+        <td><%= notification.actor.name %> <%= notification.action %> you for <%= link_to notification.notifiable.for ,order_path(notification.notifiable.id) %> <button style='display:inline-block;' class='btn btn-success join <% if(notification.action == 'joined')%> hide <% end %>' orderId='<%= notification.notifiable.id %>' ownerId='<%= notification.actor_id %>' userId='<%= notification.recipient_id %>'>Join</button></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

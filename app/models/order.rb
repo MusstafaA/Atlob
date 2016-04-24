@@ -8,8 +8,9 @@ class Order < ActiveRecord::Base
   has_many :users, :through => :inviteds
 
   mount_uploader :avatar, AvatarUploader
+
  
-  validates :res_name, presence: true ,format:{with: /\A(\w+\s?)*\s*\z/, message: ' Restaurant name can only have letters and numbers only one space between words' }
+ validates :res_name, presence: true ,format:{with: /\A(\w+\s?)*\s*\z/, message: ' Restaurant name can only have letters and numbers only one space between words' }
  
 
 end

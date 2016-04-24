@@ -1,19 +1,21 @@
 class OrdersController < ApplicationController
+
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+
   before_action :authenticate_user!
   # GET /orders
   # GET /orders.json
 
  
-  def index
+ def index
       
      @orders = Order.where(:user_id => current_user.id).paginate(:page => params[:page],  :per_page => 3)
-     
-
-  end
+    
+end
 
   # GET /orders/1
   # GET /orders/1.json
+
    def show
        
    end
@@ -55,10 +57,24 @@ class OrdersController < ApplicationController
          redirect_to orders_url
                
       end
+=======
+  def show
+  end
+
+  # GET /orders/new
+  def new
+    @user=User.find_by id:current_user.id
+    @order = Order.new
+  end
+
+  # GET /orders/1/edit
+  def edit
+>>>>>>> eaa9087365a64842869af70530fded8fdea6e229
   end
 
   # POST /orders
   # POST /orders.json
+<<<<<<< HEAD
 
   def create
     
@@ -127,12 +143,33 @@ class OrdersController < ApplicationController
            
           format.html { redirect_to orders_url , notice: 'Order was successfully created.' }
           format.json { render :show, status: :created, location: @order }
+=======
+  def create
+    @order = Order.new(order_params)
+    @order['status']='waiting'
+
+    respond_to do |format|
+      if @order.save
+        # @invited=Invited.find_by order_id:@order['id']
+        # (@invited.users.unique-[current_user]).each do |user|
+        @inviteds=Invited.all
+         @inviteds.each do |invited| 
+          @inviteduser=User.find_by id: invited.user_id
+          Notification.create(recipient: @inviteduser, actor: current_user, action: "invited", notifiable: @order )
+        end
+
+        format.html { redirect_to @order, notice: 'Order was successfully created.' }
+        format.json { render :show, status: :created, location: @order }
+>>>>>>> eaa9087365a64842869af70530fded8fdea6e229
       else
         format.html { render :new }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
+<<<<<<< HEAD
 
+=======
+>>>>>>> eaa9087365a64842869af70530fded8fdea6e229
   end
 
   # PATCH/PUT /orders/1
@@ -140,11 +177,17 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
+<<<<<<< HEAD
         
         format.html { redirect_to @order, notice: 'Order was successfully updated.' }
         format.json { render :show, status: :ok, location: @order }
       
        else
+=======
+        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.json { render :show, status: :ok, location: @order }
+      else
+>>>>>>> eaa9087365a64842869af70530fded8fdea6e229
         format.html { render :edit }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
@@ -154,6 +197,7 @@ class OrdersController < ApplicationController
   # DELETE /orders/1
   # DELETE /orders/1.json
   def destroy
+<<<<<<< HEAD
      
     @order.destroy
 
@@ -166,6 +210,14 @@ class OrdersController < ApplicationController
    end
   
  end
+=======
+    @order.destroy
+    respond_to do |format|
+      format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+>>>>>>> eaa9087365a64842869af70530fded8fdea6e229
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -175,6 +227,10 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
+<<<<<<< HEAD
       params.require(:order).permit(:for, :res_name, :avatar, :user_id ,:ingroups ,:infriends ,:page)
+=======
+      params.require(:order).permit(:for, :res_name, :avatar, :user_id)
+>>>>>>> eaa9087365a64842869af70530fded8fdea6e229
     end
 end

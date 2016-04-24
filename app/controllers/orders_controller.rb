@@ -117,6 +117,7 @@ class OrdersController < ApplicationController
                                  @invited=Invited.new(:order_id => @order['id'],:user_id => friend.user_id)
                        
                                  @invited.save
+                                   
                            end
 
                  end
@@ -124,7 +125,14 @@ class OrdersController < ApplicationController
 
             end
 
-           
+               
+          @inviteds=Invited.find_by order_id:@order['id']
+
+          @inviteds.each do |invited| 
+          @inviteduser=User.find_by id: invited.user_id
+          Notification.create(recipient: @inviteduser, actor: current_user, action: "invited", notifiable: @order )
+        end     
+      
           format.html { redirect_to orders_url , notice: 'Order was successfully created.' }
           format.json { render :show, status: :created, location: @order }
       else
