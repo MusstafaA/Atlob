@@ -30,7 +30,14 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        
+        # @invited=Invited.find_by order_id:@order['id']
+        # (@invited.users.unique-[current_user]).each do |user|
+        @inviteds=Invited.all
+         @inviteds.each do |invited| 
+          @inviteduser=User.find_by id: invited.user_id
+          Notification.create(recipient: @inviteduser, actor: current_user, action: "invited", notifiable: @order )
+        end
+
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
       else

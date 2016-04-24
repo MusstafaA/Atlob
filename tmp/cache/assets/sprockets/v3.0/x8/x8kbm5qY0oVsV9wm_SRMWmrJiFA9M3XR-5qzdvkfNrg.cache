@@ -1,0 +1,56 @@
+I"”(function() {
+  var Notifications;
+
+  Notifications = (function() {
+    function Notifications() {
+      this.notifications = $("[data-behavior='notifications']");
+      if (this.notifications.length > 0) {
+        this.setup();
+      }
+    }
+
+    Notifications.prototype.setup = function() {
+      $("[data-behavior='notifications-link']").on("click", this.handleClick);
+      return $.ajax({
+        url: "/notifications.json",
+        dataType: "JSON",
+        method: "GET",
+        success: this.handleSuccess
+      });
+    };
+
+    Notifications.prototype.handleClick = function(e) {
+      return $.ajax({
+        url: "/notifications/mark_as_read",
+        dataType: "JSON",
+        method: "POST",
+        success: function() {
+          $("[data-behavior='unread-count']").text(0);
+          return $("[id='rounded']").css("background", "#36424a");
+        }
+      });
+    };
+
+    Notifications.prototype.handleSuccess = function(data) {
+      var items;
+      items = $.map(data, function(notification) {
+        return "<li>" + notification.actor + "  " + notification.action + " you to an <a href='" + notification.url + "'> " + notification.notifiable.type + "</a><a href='#' class=''>Join</a></li>";
+      });
+      if (items.length !== 0) {
+        $("[id='rounded']").css("background", "red");
+      }
+      $("[data-behavior='unread-count']").text(items.length);
+      $("[data-behavior='notification-items']").html(items);
+      return $("[data-behavior='notification-items']").append("<li><a href='/notifications'>See All Notifications</a></li>");
+    };
+
+    return Notifications;
+
+  })();
+
+  jQuery(function() {
+    return new Notifications;
+  });
+
+}).call(this);
+:ET

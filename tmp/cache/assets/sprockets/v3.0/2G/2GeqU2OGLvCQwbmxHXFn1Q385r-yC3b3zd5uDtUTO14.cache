@@ -1,0 +1,39 @@
+I"](function() {
+  var Notifications;
+
+  Notifications = (function() {
+    function Notifications() {
+      this.notifications = $("[data-behavior='notifications']");
+      if (this.notifications.length > 0) {
+        this.setup();
+      }
+    }
+
+    Notifications.prototype.setup = function() {
+      return $.ajax({
+        url: "/notifications.json",
+        dataType: "JSON",
+        method: "GET",
+        success: this.handleSuccess
+      });
+    };
+
+    Notifications.prototype.handleSuccess = function(data) {
+      var items;
+      console.log(data);
+      items = $.map(data, function(notification) {
+        return "<li>" + notification.actor + "<a href=";
+      });
+      return $("[data-behavior='notification-items']").html(items);
+    };
+
+    return Notifications;
+
+  })();
+
+  jQuery(function() {
+    return new Notifications;
+  });
+
+}).call(this);
+:ET

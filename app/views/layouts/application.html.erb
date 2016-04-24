@@ -6,9 +6,9 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body id="top">
 
-    <nav class="navbar navbar-default " id="top">
+    <nav class="navbar navbar-default " >
       <div class="container" >
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -33,15 +33,17 @@
 
 
 
-            <li class="nav-item btn-group dropdown" >
+            <li class="nav-item btn-group dropdown" data-behavior="notifications" >
 
-                <a class="dropdown-toggle nav-link" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <a class="dropdown-toggle nav-link" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-behavior="notifications-link">
                   <i class="glyphicon glyphicon-bell"></i>
+                  <span id="rounded" data-behavior="unread-count"></span>
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="notify">
-                  <li><a href="#">Action</a></li>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="notify" data-behavior="notification-items">
+                 <!--  <li><a href="#">Action</a></li>
                   <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
+                  <li><a href="#">Something else here</a></li> -->
+                  
                 </ul>
               
 

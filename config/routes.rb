@@ -110,5 +110,25 @@ Rails.application.routes.draw do
     end
 
 
+
+# notifications
+resources :notifications do
+  collection do
+    post :mark_as_read
+  end
+
+  end
+
+#join order
+resources :notifications do
+  collection do
+    post :join
+  end
+
+  end
+
+
+
+
   
 end

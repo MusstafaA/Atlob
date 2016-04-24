@@ -61,6 +61,20 @@ class OrdetailsController < ApplicationController
     end
   end
 
+
+  def join
+    @actor=User.find_by id: params[:user_id]
+    @orderCreator=User.find_by id: params[:creator_id]
+    @order=Order.find_by id: params[:order_id]
+
+    Ordetail.create(user_id: params[:user_id] , order_id: params[:order_id])
+
+    Notification.create(recipient: @orderCreator, actor: @actor, action: "joined", notifiable: @order )
+  end
+
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ordetail
@@ -69,6 +83,6 @@ class OrdetailsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ordetail_params
-      params.require(:ordetail).permit(:item, :price, :amount, :comment, :user_id, :group_id)
+      params.require(:ordetail).permit(:item, :price, :amount, :comment, :user_id, :order_id)
     end
 end
