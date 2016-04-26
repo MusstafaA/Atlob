@@ -5,6 +5,8 @@ class FriendshipsController < ApplicationController
   # GET /friendships.json
   def index
     @friendships = Friendship.all
+    @friendship = Friendship.new
+    @users = User.all
   end
 
   # GET /friendships/1
@@ -14,7 +16,7 @@ class FriendshipsController < ApplicationController
 
   # GET /friendships/new
   def new
-    @friendship = Friendship.new
+    #@friendship = Friendship.new
   end
 
   # GET /friendships/1/edit
@@ -24,16 +26,35 @@ class FriendshipsController < ApplicationController
   # POST /friendships
   # POST /friendships.json
   def create
+    #@usersByEmail = User.where(email: friendship_params[:friend_id]) 
+    #@usersByEmail = User.where("email IN (?)", friendship_params[:friend_id])
+    #puts "****************+@usersByEmail+************"
+    #@usersByEmail.each do |usrEmail|
+    #  friendship_params[:friend_id] = usrEmail.id
+    #end
+    
+
+    #friendship_params[:friend_id] = 2
     @friendship = Friendship.new(friendship_params)
 
-    respond_to do |format|
-      if @friendship.save
-        format.html { redirect_to @friendship, notice: 'Friendship was successfully created.' }
-        format.json { render :show, status: :created, location: @friendship }
-      else
-        format.html { render :new }
-        format.json { render json: @friendship.errors, status: :unprocessable_entity }
+    if friendship_params[:friend_id] == friendship_params[:user_id] || Friendship.find_by(user_id: friendship_params[:user_id], friend_id: friendship_params[:friend_id] )
+      
+      respond_to do |format|
+          format.html { redirect_to @friendship, notice: 'Friendship was Not created.' }
       end
+
+    else
+
+      respond_to do |format|
+        if @friendship.save
+          format.html { redirect_to @friendship, notice: 'Friendship was successfully created.' }
+          #format.json { render :index, status: :created, location: @friendship }
+        else
+          format.html { render :index }
+          format.json { render json: @friendship.errors, status: :unprocessable_entity }
+        end
+      end
+      
     end
   end
 
