@@ -15,7 +15,9 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
    def show
-           
+
+       @ordered_list = Ordetail.where(:order_id => params[:id]).paginate(:page => params[:page],  :per_page => 5)
+
    end
  # GET /orders/joined
    
@@ -153,12 +155,12 @@ class OrdersController < ApplicationController
             end
 
                
-          @invitedusers=Invited.where(:order_id => @order['id'])
 
-          @invitedusers.each do |invited| 
-              @inviteduser=User.where(:id => invited.user_id) 
-         
-              Notification.create(recipient: @inviteduser, actor: current_user , action: "invited", notifiable: @order )
+          @inviteds=Invited.where(order_id:@order['id'])
+
+          @inviteds.each do |invited| 
+          @inviteduser=User.find_by id: invited.user_id
+          Notification.create(recipient: @inviteduser, actor: current_user, action: "invited", notifiable: @order )
         
          end     
       

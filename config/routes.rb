@@ -113,7 +113,6 @@ Rails.application.routes.draw do
 
 
 
-
 # notifications
 resources :notifications do
   collection do
@@ -123,11 +122,12 @@ resources :notifications do
   end
 
 #join order
-resources :notifications do
+resources :ordetails do
   collection do
     post :join
   end
 
   end
+
 
 end

@@ -112,7 +112,10 @@ Rails.application.routes.draw do
     end
 
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 29cff332167dc22ab18001ed033ae25650dfb155
 
 # notifications
 resources :notifications do
@@ -123,11 +126,16 @@ resources :notifications do
   end
 
 #join order
-resources :notifications do
+resources :ordetails do
   collection do
     post :join
   end
 
   end
 
+<<<<<<< HEAD
+
+  
+=======
+>>>>>>> 29cff332167dc22ab18001ed033ae25650dfb155
 end

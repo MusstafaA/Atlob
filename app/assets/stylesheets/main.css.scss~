@@ -1,10 +1,16 @@
 body {
   font-family: 'Arial', sans-serif;
   background: #eee;
-  line-height: 1.6em;
 }
 
+.scroll{
+  overflow-y: scroll;
+  margin-top:10px;
+}
 
+.profile-img{
+  margin_top:7px;
+}
 
 .navbar{
   //overflow:auto;
@@ -128,18 +134,21 @@ footer{
   background: #36424a;
   color: #fff;
   text-align: center;
-  height: 60px;
-  padding-top: 20px;
-  margin-top: 30px;
-
+  height: 40px;
+  width:100%;
+  margin: auto;
+  bottom:0;
+  position:absolute;
 }
 
+footer p{
+  text-align:center;
+  line-height:20px;
+  padding-top:10px;
+}
 
 #notify{
-<<<<<<< HEAD
-  
-  background: #36424a;
-=======
+
   background: #36424a;
   width:400px;
 }
@@ -149,11 +158,13 @@ footer{
 
         -moz-border-radius:10px 10px 10px 10px;  // rounds corners for firefox
         border-radius:10px 10px 10px 10px;  //rounds corners for other browsers
-        border:solid 1px #000;
         background:#36424a;
         color: white;
         padding:5px;
   
- 
->>>>>>> eaa9087365a64842869af70530fded8fdea6e229
+<<<<<<< HEAD
 }
+=======
+ 
+}
+>>>>>>> 29cff332167dc22ab18001ed033ae25650dfb155

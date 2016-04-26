@@ -1,3 +1,73 @@
+
+<div class="row">
+  <h2 id="foo" >Requested Orders List </h2>
+  <input id="current_order" type="hidden" value="<%= params[:id] %>"/>
+<table data-behavior="ordetails" class='col-md-8 col-lg-8 col-sm-4 col-xs-12 table table-hover table-striped table-bordered'>
+  <thead>
+    <tr>
+      <th>Person</th>
+      <th>Item</th>
+      <th>Amount</th>
+      <th>Price</th>
+      <th>Comment</th>
+    </tr>
+  </thead>
+
+
+  <tbody  data-behavior='order-items'>
+
+  </tbody>
+</table>
+<br>
+
+<div class="flickr_pagination">
+    <div class="page_info">
+      <%= page_entries_info @ordered_list %>
+    </div>
+    <%= will_paginate @ordered_list, :container => false %>
+  </div>
+
+</div>
+
+<script>
+
+var worker;
+(worker = function() {
+  return $.ajax({
+    url: "/orders/<%= params[:id] %>.json",
+    dataType: "JSON",
+    method: "GET",
+    success: handleSuccess,
+    complete: function() {
+      return setTimeout(worker, 1000);
+    }
+  });
+})();
+
+function handleSuccess(data) {
+        console.log(data);
+        items = $.map(data, function(order) {
+
+          if (order.item ){
+          return "<tr><td>" + order.person + "</td><td>" + order.item + " </td><td>" + order.amount + "</td><td>" + order.price + " LE</td><td>" + order.comment + "</td></tr>";
+          }
+        });
+
+        $("[data-behavior='order-items']").html(items);
+
+    };
+
+
+</script>
+
+
+
+
+
+
+
+<div class="row">
+  <h2>Order Details</h2>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -12,7 +82,7 @@
 
 <p>
   <strong>Avatar:</strong>
-  <%= @order.avatar %>
+  <img class="img-rounded" alt="no image" width="80" height="80" src="<%= @order.avatar %>" />
 </p>
 
 <p>
@@ -27,8 +97,4 @@
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> eaa9087365a64842869af70530fded8fdea6e229
+<div>
