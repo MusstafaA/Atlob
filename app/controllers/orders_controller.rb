@@ -8,22 +8,43 @@ class OrdersController < ApplicationController
   def index
       
      @orders = Order.where(:user_id => current_user.id).paginate(:page => params[:page],  :per_page => 3)
-     
 
-  end
+      
+ end
 
   # GET /orders/1
   # GET /orders/1.json
    def show
-       @ordered_list = Ordetail.where(:order_id => params[:id]).paginate(:page => params[:page],  :per_page => 5)
-   end
 
-  # GET /orders/new
+       @ordered_list = Ordetail.where(:order_id => params[:id]).paginate(:page => params[:page],  :per_page => 5)
+
+   end
+ # GET /orders/joined
+   
+   def joined 
+       
+       @joined=current_user.ordetails
+       
+       @order_ids=[]
+       
+       @i=0
+      
+       @joined.each  do |j|
+     
+         @order_ids[@i]=j.order_id
+        
+         @i=@i+1
+  
+     end
+    
+      @orders=Order.where(:id => @order_ids).paginate(:page => params[:page],  :per_page => 3)
+
+   end 
+  
+ # GET /orders/new
   
   def new
-  
- 
-   
+     
      @groups =Group.where(:user_id => current_user.id).as_json
      @order = Order.new
      @friends= current_user.friendships  
@@ -44,6 +65,13 @@ class OrdersController < ApplicationController
   
  def edit
 
+    @order_id=params[:id]
+     
+    @ordercheck=Order.where(:id => @order_id ).where(:user_id => current_user.id)
+    
+    if @ordercheck.present?
+
+
      @order = Order.find(params[:id])
 
      @order['status']='finished'
@@ -55,6 +83,9 @@ class OrdersController < ApplicationController
          redirect_to orders_url
                
       end
+    else
+           redirect_to orders_url
+    end  
   end
 
   # POST /orders
@@ -76,13 +107,11 @@ class OrdersController < ApplicationController
     
     @order = Order.new(order_params)
     @order['status']='waiting'
-     @order['res_name']= @order['res_name'].strip 
+    @order['res_name']= @order['res_name'].strip 
     @inf=@order['infriends']
     @ing=@order['ingroups']
      
       
-       
-
     respond_to do |format|
       
        if @order.save
@@ -126,12 +155,14 @@ class OrdersController < ApplicationController
             end
 
                
+
           @inviteds=Invited.where(order_id:@order['id'])
 
           @inviteds.each do |invited| 
           @inviteduser=User.find_by id: invited.user_id
           Notification.create(recipient: @inviteduser, actor: current_user, action: "invited", notifiable: @order )
-        end     
+        
+         end     
       
           format.html { redirect_to orders_url , notice: 'Order was successfully created.' }
           format.json { render :show, status: :created, location: @order }
@@ -145,6 +176,7 @@ class OrdersController < ApplicationController
 
   # PATCH/PUT /orders/1
   # PATCH/PUT /orders/1.json
+=begin  
   def update
     respond_to do |format|
       if @order.update(order_params)
@@ -158,11 +190,19 @@ class OrdersController < ApplicationController
       end
     end
   end
+=end
 
   # DELETE /orders/1
   # DELETE /orders/1.json
   def destroy
+      
+    @order_id=params[:id]
      
+    @ordercheck=Order.where(:id => @order_id ).where(:user_id => current_user.id)
+                   
+    
+    if @ordercheck.present? and @ordercheck[0].status == 'waiting'
+
     @order.destroy
 
     respond_to do |format|
@@ -172,6 +212,11 @@ class OrdersController < ApplicationController
       format.json { head :no_content }
  
    end
+ 
+  else
+   
+   redirect_to orders_url 
+ end
   
  end
 

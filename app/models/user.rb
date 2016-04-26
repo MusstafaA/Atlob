@@ -21,9 +21,12 @@ class User < ActiveRecord::Base
 
    mount_uploader :avatar, AvatarUploader
    
-   validates :name, presence: true,length: { minimum: 5}  
+
+   validates :name, presence: true,length: { minimum: 3 }  ,uniqueness: true
+
    validates :avatar, presence: true
 
+   validates :email, uniqueness: true
 
 
   has_many :orders , :dependent => :destroy  

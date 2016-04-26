@@ -1,7 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Friendships</h1>
+<h1>Friends</h1>
 
+<!-- <%= link_to 'New Friendship', new_friendship_path %>-->
+
+<%= render 'form' %>
+
+
+<fieldset class="scroll col-sm-12">
+  <legend>Friends List:</legend>
+  <% @friendships.each do |friendship| %>
+    <div class="col-sm-4">
+      <img class="col-sm-5" src="<%= friendship.friend.avatar %>">
+      <div class="col-sm-6">
+        <span class="col-sm-12"><%= friendship.friend.name %></span>
+        <span class="col-sm-12"><%= link_to 'Unfriend', friendship, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+      </div>
+    </div>
+  <% end %>
+</fieldset>
+
+<!--
 <table>
   <thead>
     <tr>
@@ -14,16 +33,16 @@
   <tbody>
     <% @friendships.each do |friendship| %>
       <tr>
-        <td><%= friendship.friend_id %></td>
-        <td><%= friendship.user_id %></td>
+        <td><%= friendship.friend.name %></td>
+        <td><%= friendship.user.name %></td>
         <td><%= link_to 'Show', friendship %></td>
         <td><%= link_to 'Edit', edit_friendship_path(friendship) %></td>
-        <td><%= link_to 'Destroy', friendship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Unfriend', friendship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+-->
 
-<%= link_to 'New Friendship', new_friendship_path %>
+

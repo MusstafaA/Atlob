@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Orders</h1>
-
+<div class='row' >
 <%= link_to 'New Order', new_order_path ,:class =>'btn btn-default' %>
-<br> <br>
+<%= link_to 'Joined Orders', '/orders/joined/all', :class =>'btn btn-default' %>
+</div> 
 <table class='col-md-8 col-lg-8 col-sm-4 col-xs-12 table table-hover table-striped table-bordered'>
   <thead>
     <tr>
@@ -13,12 +14,12 @@
       <th>Status</th>
       <th>Invited</th>
       <th>Joined</th>
-      
       <th colspan="3">Actions</th>
     </tr>
   </thead>
 
   <tbody>
+   
     <%  @orders.each do |order| %>
       <tr>
         <td><img class="img-rounded" alt="no image" width="50" height="50" src="<%= order.avatar %>" /> </td>
@@ -27,10 +28,19 @@
         <td><%=  order.status %></td>
         <td><%=  order.inviteds.length %></td>
         <td><%=  order.ordetails.length %></td>
+         <% if order.status == 'waiting'%>
         <td ><%= link_to 'Show', order ,:class => 'btn btn-default'%></td>
+
         <td><%=  link_to 'Finish', edit_order_path(order), :class => 'btn btn-default' %></td>
-        <td><%=  link_to 'Destroy',order, method: :delete,:class => 'btn btn-default' %></td>
+        <td><%=  link_to 'Destroy',order, method: :delete ,:class => 'btn btn-default' %></td>
       </tr>
+       <% else %>
+         
+          <td colspan='3'><%=  link_to 'Show', order ,:class => 'btn btn-default'%></td>
+          
+          
+             </tr>
+          <% end %>  
     <% end %>
   </tbody>
 </table>
