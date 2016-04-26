@@ -7,6 +7,7 @@
 <table class='col-md-8 col-lg-8 col-sm-4 col-xs-12 table table-hover table-striped table-bordered'>
   <thead>
     <tr>
+      <th>menu</th>
       <th>Order</th>
       <th>Resturant name</th>
       <th>Status</th>
@@ -20,6 +21,7 @@
   <tbody>
     <%  @orders.each do |order| %>
       <tr>
+        <td><img class="img-rounded" alt="no image" width="50" height="50" src="<%= order.avatar %>" /> </td>
         <td><%=  order.for %></td>
         <td><%=  order.res_name %></td>
         <td><%=  order.status %></td>

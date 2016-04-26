@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
         user.uid = auth.uid
         user.email = auth.info.email
         user.name = auth.info.name
-        user.avatar = auth.info.picture
+        user.avatar = auth.info.image
         user.password = Devise.friendly_token[0,20]
       end
     end
@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
   
   has_many :ordetails, :dependent =>  :destroy  
   has_many :orders, :through => :ordetails
-
+  
   
   has_many :usgroups, :dependent =>  :destroy  
   has_many :groups, :through => :usgroups

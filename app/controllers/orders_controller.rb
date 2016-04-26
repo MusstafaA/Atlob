@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
    def show
-       
+       @ordered_list = Ordetail.where(:order_id => params[:id]).paginate(:page => params[:page],  :per_page => 5)
    end
 
   # GET /orders/new
@@ -126,7 +126,7 @@ class OrdersController < ApplicationController
             end
 
                
-          @inviteds=Invited.find_by order_id:@order['id']
+          @inviteds=Invited.where(order_id:@order['id'])
 
           @inviteds.each do |invited| 
           @inviteduser=User.find_by id: invited.user_id
