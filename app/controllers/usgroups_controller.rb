@@ -28,8 +28,8 @@ class UsgroupsController < ApplicationController
 
     respond_to do |format|
       if @usgroup.save
-        format.html { redirect_to @usgroup, notice: 'Usgroup was successfully created.' }
-        format.json { render :show, status: :created, location: @usgroup }
+        format.html { redirect_to controller: 'groups', notice: 'Usgroup was successfully created.' }
+       # format.json { render :show, status: :created, location: @usgroup }
       else
         format.html { render :new }
         format.json { render json: @usgroup.errors, status: :unprocessable_entity }
