@@ -148,6 +148,23 @@ footer p{
 }
 
 #notify{
+
   
   background: #36424a;
+
+  background: #36424a;
+  width:400px;
+}
+
+
+#rounded{
+
+        -moz-border-radius:10px 10px 10px 10px;  // rounds corners for firefox
+        border-radius:10px 10px 10px 10px;  //rounds corners for other browsers
+        border:solid 1px #000;
+        background:#36424a;
+        color: white;
+        padding:5px;
+  
+ 
 }
