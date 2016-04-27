@@ -1,4 +1,0 @@
-
-<h1>Atlob Home</h1>
-<p id="notice"><%= notice %></p>
-

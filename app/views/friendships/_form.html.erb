@@ -24,7 +24,7 @@
 
     <datalist id="email">
       <% (@users-[current_user]).each do |u| %>
-        <option value="<%= u.id %>"><%= u.email %></option>
+        <option value="<%= u.email %>"><%= u.email %></option>
       <% end %>
     </datalist>
 
