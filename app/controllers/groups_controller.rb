@@ -1,20 +1,37 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :js #to make it respond to ajax
 
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.all
+    @groups = Group.where("user_id IN(?)", current_user.id)
+    @group = Group.new
+    @usgroup = Usgroup.new
   end
 
   # GET /groups/1
   # GET /groups/1.json
   def show
+     @groups = Group.where("user_id IN(?)", current_user.id)
+     @group = Group.new
+     @usgroup = Usgroup.new
+
+     @group_users = Usgroup.where(:group_id => params[:id])
+     @g_users=[]
+     @group_users.each do |grData|
+        @userDetails=User.find_by(:id => grData['user_id'])
+        @g_users.push(@userDetails)
+     end
+     # list users in current usgroup by group id
+     # store user ids in array 
+     # select user id from id and then add it to the view
   end
 
   # GET /groups/new
   def new
     @group = Group.new
+    # @group = Group.find params[:user_id]
   end
 
   # GET /groups/1/edit
@@ -25,11 +42,15 @@ class GroupsController < ApplicationController
   # POST /groups.json
   def create
     @group = Group.new(group_params)
+    # if friendship_params[:friend_id] == friendship_params[:user_id] || 
+    #   Friendship.find_by(user_id: friendship_params[:user_id], 
+    #     friend_id: friendship_params[:friend_id] )
 
     respond_to do |format|
       if @group.save
-        format.html { redirect_to @group, notice: 'Group was successfully created.' }
-        format.json { render :show, status: :created, location: @group }
+         format.html { redirect_to controller: 'groups'}
+         # format.html { redirect_to @group, notice: 'Group was successfully created.' }
+         format.json { render :show, status: :created, location: @group }
       else
         format.html { render :new }
         format.json { render json: @group.errors, status: :unprocessable_entity }
