@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   
     get 'orders/joined/all' => 'orders#joined'
 
+    get 'notifications/show' => 'notifications#show'
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

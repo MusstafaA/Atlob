@@ -5,6 +5,10 @@ class Notifications
 
 		@notificationList = $("[data-behavior='notification-list']")
 		@listen() if @notificationList.length > 0
+
+		@notificationfeeds = $("[data-behavior='notifeeds']")
+		@feed() if @notificationfeeds.length > 0
+
 	setup: ->
 		self=@
 		#$("[data-behavior='notifications-link']").on "click", @handleClick	
@@ -30,6 +34,25 @@ class Notifications
 
 
 		
+
+	feed: ->
+		self=@
+		#$("[data-behavior='notifications-link']").on "click", @handleClick	
+
+		$("#top").delegate("[data-behavior='notifications-link']", "click", @handleClick)
+		$("#top").delegate(".joinBtn", "click", @joinClick)	
+		
+		(worker = ->
+		  $.ajax
+		    url: "/notifications/show"
+		    method: "GET"
+		    success:self.handleFeeds
+		    complete: ->
+		      setTimeout worker, 10000
+
+		)()
+
+
 
 	join: (e) -> 
 		or_id= $( this ).attr( "orderId" )
@@ -86,8 +109,18 @@ class Notifications
 		if(items.length)!=0
 			$("[id='rounded']").css("background", "red")
 		$("[data-behavior='unread-count']").text(items.length)	
-		$("[data-behavior='notification-items']").html(items)	
+		$("[data-behavior='notification-items']").html(items)
 		$("[data-behavior='notification-items']").append("<li><a href='/notifications'>See All Notifications</a></li>")	
+
+
+	handleFeeds: (data) ->
+		console.log(data)
+		items = $.map data, (notification)	->
+					"<p><span style='display:inline-block;' >#{notification.actor} has #{notification.action} a &nbsp </span><a  style='display:inline-block;'  href='#{notification.url}'> #{notification.notifiable.for} order</a> from #{notification.notifiable.res_name}</p>"
+
+		console.log(items[1])
+		$("[data-behavior='notification-feeds']").html(items)		
+	
 
 jQuery ->
 	new Notifications		

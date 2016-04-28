@@ -15,7 +15,16 @@ class OrdetailsController < ApplicationController
   # GET /ordetails/new
   def new
     @ordetail = Ordetail.new(order_id: params[:order_id])
-    @ordered_list = Ordetail.where(order_id: params[:order_id] , :user_id => current_user.id).paginate(:page => params[:page], :per_page => 5)
+    @status = Order.find_by(id: params[:order_id])
+    if @status
+      if @status.status == 'waiting'
+        @ordered_list = Ordetail.where(order_id: params[:order_id] , :user_id => current_user.id).paginate(:page => params[:page], :per_page => 5)
+      else
+        @cancel_message = 'Sorry Order Is Canceled!'
+      end
+    else
+      @finish_message = 'Sorry Order Is Finished!'
+    end  
   end
 
   # GET /ordetails/1/edit
@@ -35,7 +44,8 @@ class OrdetailsController < ApplicationController
         # format.html { redirect_to @ordetail, notice: 'Ordetail was successfully created.' }
         # format.json { render :show, status: :created, location: @ordetail }
       else
-        format.html { render :new }
+        format.html { redirect_to action: "new", order_id: @ordetail['order_id'] , notice: @ordetail.errors.messages }
+        #format.html { render :new }
         format.json { render json: @ordetail.errors, status: :unprocessable_entity }
       end
     end

@@ -102,7 +102,6 @@ class OrdersController < ApplicationController
          @t[@i]=User.where(:id => friend.friend_id)
          @i=@i+1
   
-
     end
     
     @order = Order.new(order_params)
@@ -157,12 +156,28 @@ class OrdersController < ApplicationController
                
 
           @inviteds=Invited.where(order_id:@order['id'])
-
           @inviteds.each do |invited| 
           @inviteduser=User.find_by id: invited.user_id
           Notification.create(recipient: @inviteduser, actor: current_user, action: "invited", notifiable: @order )
         
-         end     
+          end   
+
+              @user_friends= Friendship.where(:user_id => current_user.id)
+              @myfriends=[]
+              @i=0
+              if @user_friends
+                  @user_friends.each  do |friend|             
+                       @myfriends[@i]=User.find_by(:id => friend.friend_id)
+                       @i=@i+1            
+                  end
+
+                  @myfriends.each  do |myfriend| 
+                        # @notifyfriend=User.find_by id: myfriend.id           
+                       Notification.create(recipient:myfriend, actor: current_user, action: "created", notifiable: @order )        
+                  end
+              end
+
+
       
           format.html { redirect_to orders_url , notice: 'Order was successfully created.' }
           format.json { render :show, status: :created, location: @order }
