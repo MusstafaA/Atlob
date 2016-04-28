@@ -24,17 +24,40 @@ class UsgroupsController < ApplicationController
   # POST /usgroups
   # POST /usgroups.json
   def create
-    @usgroup = Usgroup.new(usgroup_params)
+    @usersByName = User.find_by(name: usgroup_params[:user_id])
 
-    respond_to do |format|
-      if @usgroup.save
-        format.html { redirect_to controller: 'groups', notice: 'Usgroup was successfully created.' }
-       # format.json { render :show, status: :created, location: @usgroup }
+    if @usersByName && Friendship.find_by(user_id: current_user.id, friend_id: @usersByName.id )
+
+      if @usersByName.id == current_user.id || Usgroup.find_by(user_id: @usersByName.id , group_id: usgroup_params[:group_id])
+
+        respond_to do |format|
+            format.html { redirect_to groups_url, notice: 'User was Not added.' }
+        end
+
       else
-        format.html { render :new }
+
+        @usgroup = Usgroup.new(user_id: @usersByName.id , group_id: usgroup_params[:group_id])
+
+        respond_to do |format|
+          if @usgroup.save
+            format.html { redirect_to groups_url, notice: 'Usgroup was successfully created.' }
+           # format.json { render :show, status: :created, location: @usgroup }
+          else
+            format.html { render :new }
+            format.json { render json: @usgroup.errors, status: :unprocessable_entity }
+          end
+        end
+
+      end
+
+
+    else
+      respond_to do |format|
+        format.html { redirect_to groups_url , notice: 'Name does not exist or not one of your friends.' }
         format.json { render json: @usgroup.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PATCH/PUT /usgroups/1
@@ -56,7 +79,7 @@ class UsgroupsController < ApplicationController
   def destroy
     @usgroup.destroy
     respond_to do |format|
-      format.html { redirect_to usgroups_url, notice: 'Usgroup was successfully destroyed.' }
+      format.html { redirect_to groups_url, notice: 'Usgroup was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -72,3 +95,4 @@ class UsgroupsController < ApplicationController
       params.require(:usgroup).permit(:user_id, :group_id)
     end
 end
+ 

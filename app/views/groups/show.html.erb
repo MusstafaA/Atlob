@@ -44,9 +44,9 @@
           <div class="col-md-8 col-lg-8 col-sm-8 col-xs-8">
               <% @groups.each do |group| %> 
             <div class="btn-group">
-                  <%= link_to "Edit", edit_group_path(group),:class => "btn btn-success", :method => :get %>
+                  
                   <%= link_to "Display", group,:class => "btn btn-success", :method => :get %> 
-                  <%= link_to "Add friend", group,:class => "btn btn-success", :method => :get %> 
+                  
                   <%= link_to "Delete", group,:class => "btn btn-success", :method => :delete , data: { confirm: 'Are you sure?' } %> 
                     <br><br>
                   <% end %>
@@ -91,11 +91,17 @@
 
         <div class="field">
           <%= f.label :user_id %><br>
-          <%= f.number_field :user_id %>
+          <%= f.text_field :user_id , :list=>"user" , :required => true %>
         </div>
+
+        <datalist id="user">
+          <% @friendships.each do |u| %>
+            <option value="<%= u.friend.name %>"><%= u.friend.name %></option>
+          <% end %>
+        </datalist>
+
         <div class="field">
-          <%= f.label :group_id %><br>
-          <%= f.number_field :group_id %>
+          <%= f.hidden_field :group_id , :value=>params[:id]%>
         </div>
         <div class="actions">
           <%= f.submit %>
@@ -106,18 +112,35 @@
 
       <div>
       		
-      		  <% @g_users.each do |guser| %>
-              <img class='img-circle img-responsive'  width='50px' height='40px' src="<%= guser.avatar%> "/><%= guser.name %> <br><br>
-              <!-- <div class="btn-group">
-                  <%= link_to "Delete", guser,:class => "btn btn-success", :method => :delete , data: { confirm: 'Are you sure?' } %> 
-                    <br><br>
-            </div> -->
-              <% end %>
 
+      <table>
+        <thead>
+          <tr>
+            <th>User</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @group_users.each do |usgroup| %>
+            <tr>
+              <td><img class='img-circle img-responsive'  width='50px' height='40px' src="<%= usgroup.user.avatar%> "/></td>
+              <td><%= usgroup.user.name %></td>
+              <td><%= link_to 'Destroy', usgroup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+
+      		  
 
       </div>
 
     </div>
+
+
+
        
   </div> 
 

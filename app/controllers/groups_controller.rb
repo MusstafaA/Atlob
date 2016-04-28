@@ -5,7 +5,7 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.where("user_id IN(?)", current_user.id)
+    @groups = Group.where(user_id: current_user.id)
     @group = Group.new
     @usgroup = Usgroup.new
   end
@@ -13,19 +13,19 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
-     @groups = Group.where("user_id IN(?)", current_user.id)
+     @groups = Group.where(user_id: current_user.id)
      @group = Group.new
      @usgroup = Usgroup.new
 
      @group_users = Usgroup.where(:group_id => params[:id])
-     @g_users=[]
-     @group_users.each do |grData|
-        @userDetails=User.find_by(:id => grData['user_id'])
-        @g_users.push(@userDetails)
-     end
-     # list users in current usgroup by group id
-     # store user ids in array 
-     # select user id from id and then add it to the view
+
+     # @g_users=[]
+     # @group_users.each do |grData|
+     #    @userDetails=User.find_by(:id => grData['user_id'])
+     #    @g_users.push(@userDetails)
+     # end
+     @friendships = Friendship.where(user_id: current_user.id)
+     
   end
 
   # GET /groups/new
@@ -41,21 +41,26 @@ class GroupsController < ApplicationController
   # POST /groups
   # POST /groups.json
   def create
-    @group = Group.new(group_params)
-    # if friendship_params[:friend_id] == friendship_params[:user_id] || 
-    #   Friendship.find_by(user_id: friendship_params[:user_id], 
-    #     friend_id: friendship_params[:friend_id] )
+    @groupName = Group.find_by(name: group_params[:name] , user_id: group_params[:user_id])
 
-    respond_to do |format|
-      if @group.save
-         format.html { redirect_to controller: 'groups'}
-         # format.html { redirect_to @group, notice: 'Group was successfully created.' }
-         format.json { render :show, status: :created, location: @group }
-      else
-        format.html { render :new }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
+    if @groupName
+      respond_to do |format|
+            format.html { redirect_to groups_url, notice: 'Group was Not added.' }
+      end
+    else
+      @group = Group.new(group_params)
+      respond_to do |format|
+        if @group.save
+           format.html { redirect_to controller: 'groups'}
+           # format.html { redirect_to @group, notice: 'Group was successfully created.' }
+           format.json { render :show, status: :created, location: @group }
+        else
+          format.html { render :new }
+          format.json { render json: @group.errors, status: :unprocessable_entity }
+        end
       end
     end
+
   end
 
   # PATCH/PUT /groups/1

@@ -93,17 +93,15 @@ Rails.application.routes.draw do
        resources :friendships
     end
 
-   resources :users do
+  resources :users do
        resources :usgroups
-    end
+  end
       
-   resources :groups do
+  resources :groups do
        resources :usgroups
-    end
+  end
 
-
-
-    resources :users do
+  resources :users do
     resources :ordetails
   end
 
