@@ -4,7 +4,8 @@ class NotificationsController < ApplicationController
 	def index
 		@notifications = Notification.where(recipient: current_user).unread 
 
-		@all_notfications= Notification.where(recipient: current_user)
+		@all_notfications= Notification.where(recipient: current_user).paginate(:page => params[:page], :per_page => 5)
+	
 	end
 
 	def mark_as_read
@@ -13,15 +14,6 @@ class NotificationsController < ApplicationController
 		render json: {success: true}
 	end
 
-	def join
-	    @actor=User.find_by id: params[:user_id]
-	    @orderCreator=User.find_by id: params[:creator_id]
-	    @order=Order.find_by id: params[:order_id]
 
-	    Ordetail.create(user_id: params[:user_id] , order_id: params[:order_id])
-
-	    Notification.create(recipient: @orderCreator, actor: @actor, action: "joined", notifiable: @order )
-	    render json: {success: true}
-    end
 
 end	
