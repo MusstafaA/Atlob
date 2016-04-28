@@ -1,4 +1,32 @@
-
 <h1>Atlob Home</h1>
-<p id="notice"><%= notice %></p>
 
+<div style='float:left'>
+
+  <h3>Last Orders</h3>
+
+  <%  @orders.each do |order| %>
+      <h4> <%= link_to  order.for+"  on  "+order.created_at.to_s  , order %></h4>
+
+   <% end %>
+
+</div>
+
+<div style='float:left; margin-left:30px; '>
+
+   <h3>Friends Activities </h3>
+
+  <% @friends.each do |friend| %>
+
+    <%  @order = Order.where(:user_id => friend.friend_id).order(id: :desc).limit(1) %>
+  
+     <% if @order.present? %>
+    <%  @user = User.where(:id => friend.friend_id) %>
+
+
+      <h4> <%= link_to @user[0].name , '/users/'+@user[0].id.to_s %> has created an <%= link_to 'order' , @order[0]  %> from <%= @order[0].res_name %> </h4>
+
+   <% end %>
+
+<% end %>
+
+</div>

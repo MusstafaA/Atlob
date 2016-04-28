@@ -18,6 +18,9 @@
  @import 'bootstrap';
  @import 'partials/variables';
  @import 'main';
+ @import 'jquery.ui.all';
+ @import 'pqselect.min.css.scss';
+ @import 'pqselect.dev.css.scss';
 
 
 

@@ -19,7 +19,7 @@ class Notifications
 		    method: "GET"
 		    success:self.handleSuccess
 		    complete: ->
-		      setTimeout worker, 15000
+		      setTimeout worker, 10000
 
 		)()
 
@@ -36,12 +36,13 @@ class Notifications
 		us_id= $( this ).attr( "userId" )
 		own_id= $( this ).attr( "ownerId" )
 		$.ajax(
-			url: "/notifications/join"
+			url: "/ordetails/join"
 			dataType: "JSON"
 			data:{order_id:or_id , user_id:us_id, creator_id:own_id}
 			method: "POST"
+		)
 
-		)		
+		window.location.href = 'http://localhost:3000/orders/'+or_id+'/ordetails/new'		
 
 
 
@@ -50,13 +51,13 @@ class Notifications
 		us_id= $( this ).attr( "userId" )
 		own_id= $( this ).attr( "ownerId" )
 		$.ajax(
-			url: "/notifications/join"
+			url: "/ordetails/join"
 			dataType: "JSON"
 			data:{order_id:or_id , user_id:us_id, creator_id:own_id}
 			method: "POST"
 
 		)		
-
+		window.location.href = 'http://localhost:3000/orders/'+or_id+'/ordetails/new'
 
 
 

@@ -18,14 +18,43 @@
   </thead>
 
   <tbody>
-   
     <%  @orders.each do |order| %>
       <tr>
         <td><%=  order.for %></td>
         <td><%=  order.res_name %></td>
         <td><%=  order.status %></td>
         <td><%=  order.inviteds.length %></td>
-        <td><%=  order.ordetails.length %></td>
+        <%  @i=0; @t=[]; %>
+        
+     <% @joined=order.ordetails %>
+   
+     <% if    @joined.length != 0 %>
+
+    <% @joined.each  do |joined| %>
+              
+         <%  @temp=User.where(:id => joined.user_id) %>
+           
+              <% if @i == 0 %>
+                    <%  @t[@i]=@temp %>
+           
+                      <% @i=@i+1 %>
+          
+              <% else %>
+
+            <% if @t.include? @temp == false %> 
+
+           
+           <%  @t[@i]=@temp %>
+            
+           <%  @i=@i+1 %>
+          
+          <% end %>
+
+        <% end %>
+ <%  end %>   
+  
+<% end %>
+    <td><%= @t.length %></td>
          <% if order.status == 'waiting'%>
         <td ><%= link_to 'Show', order ,:class => 'btn btn-default'%></td>
 

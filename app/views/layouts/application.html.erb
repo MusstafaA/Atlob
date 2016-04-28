@@ -3,10 +3,26 @@
 <head>
   <title>AtlobApp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <style>
+
+     #order_for{
+
+         width:200px;
+
+      }
+
+   #groups option{
+     
+     direction:rtl;
+   
+   }
+
+  </style>
 </head>
-<body id="top">
+<body id="top" onload="prettyPrint();">
 
     <nav class="navbar navbar-default " >
       <div class="container" >
@@ -17,15 +33,24 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/"><h2>Yala Notlob</h2></a>
+
+          <a class="navbar-brand" href="/"><h1>Yala Notlob</h1></a>
+
         </div>
         <%if user_signed_in? %>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Friends</a></li>
-            <li><a href="#">Groups</a></li>
-            <li><a href="/orders">Orders</a></li>
+
+            <li class="<%= params[:controller]== 'welcome' ? 'active' : '' %>"><%= link_to "Home",root_path%></li>
+
+            <li class="<%= params[:controller]== 'friendships' ? 'active' : '' %>"><%= link_to "Friends",user_friendships_path(current_user.id) %></li>
+        
+
+             <li class="<%= params[:controller]== 'groups' ? 'active' : '' %>"><%= link_to "Groups",user_groups_path(current_user.id) %></li>
+
+
+            <li class="<%= params[:controller]== 'orders' ? 'active' : '' %>"><%= link_to "Orders",orders_path %></li>
+
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
@@ -36,24 +61,18 @@
             <li class="nav-item btn-group dropdown" data-behavior="notifications" >
 
                 <a class="dropdown-toggle nav-link" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-behavior="notifications-link">
+
                   <i class="glyphicon glyphicon-bell"></i>
                   <span id="rounded" data-behavior="unread-count"></span>
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="notify" data-behavior="notification-items">
-                 <!--  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li> -->
-                  
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="notify" data-behavior="notification-items">                  
                 </ul>
-              
-
             </li>
 
-            <li><a href="#"><img class='img-circle img-responsive'  width='50px' height='40px' src="<%= current_user.avatar%>" /></a></li>
-            
-             <li><%= link_to  current_user.name  , '/users/edit' %></li>
-            
-            <li><%=  link_to 'Logout', destroy_user_session_path ,method: :delete %></li>
+            <li><img class="img-circle" alt="no image" width="50" height="50" src="<%= current_user.avatar %>" /></li>
+            <li><a href="/users/edit"><%= current_user.name %></a></li>
+            <li><%= link_to 'Logout', destroy_user_session_path ,method: :delete %></li>
+
           </ul>
 
 
@@ -69,7 +88,7 @@
       	<div ></div>
 
         <div class="row">
-          <div class="col-md-8 col-lg-8 col-sm-8 col-xs-8">
+          <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
 
  
 
@@ -86,11 +105,27 @@
       </div>
     </section>
 
-    <footer id="foot">
-      <p>Copyright &copy; 2016, Yalla Notlob </p>
-    </footer>
+ 
+<script type="text/javascript">
+$("#groups").multiselect({
 
+	header: "Select groups to invite",
+    noneSelectedText: "Select groups to invite",
+}).multiselectfilter();
+$("#friends").multiselect({
 
+		header: "Select Friends to invite",
+        noneSelectedText: "Select friends to invite",
+
+}).multiselectfilter();
+$("#order_for").multiselect({
+		multiple: false,
+		header: "Select an option",
+		noneSelectedText: "Select an Option",
+		selectedList: 1
+	});
+
+</script>
 
 </body>
 </html>

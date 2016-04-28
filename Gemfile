@@ -13,6 +13,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'will_paginate', '~> 3.1.0'
+gem 'public_activity'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -25,7 +26,8 @@ gem 'devise'
 gem 'therubyracer'
 gem 'omniauth'
 gem 'omniauth-digitalocean'
-
+gem 'jquery-ui-sass-rails'
+gem 'jquery-ui-rails'
 gem 'omniauth-facebook'
 
 gem "omniauth-google-oauth2"
