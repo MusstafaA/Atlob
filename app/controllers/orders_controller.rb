@@ -8,20 +8,67 @@ class OrdersController < ApplicationController
   def index
       
      @orders = Order.where(:user_id => current_user.id).paginate(:page => params[:page],  :per_page => 3)
+     
 
-      
- end
+  end
 
   # GET /orders/1
   # GET /orders/1.json
    def show
+           
+      
 
-       @ordered_list = Ordetail.where(:order_id => params[:id]).paginate(:page => params[:page],  :per_page => 5)
-
-   end
- # GET /orders/joined
+  @checkjoined=Ordetail.where(:order_id => @order.id).where(:user_id => current_user.id)
+  
+  @checkfriend=Friendship.where(:user_id => @order.user_id).where(:friend_id => current_user.id)
+  if current_user.id == @order.user_id or @checkjoined.present? or @checkfriend.present?
+    
+     @user=User.where(:id => @order.user_id) 
+        
+      @i=0
+      @t=[]
+        
+     @joined=@order.ordetails
    
-   def joined 
+    if    @joined.length != 0
+
+     @joined.each  do |joined|
+              
+           @temp=User.where(:id => joined.user_id)
+           
+               if @i == 0
+                      @t[@i]=@temp
+           
+                      @i=@i+1
+          
+               else
+
+           if @t.include? @temp == false 
+
+           
+             @t[@i]=@temp
+           
+             @i=@i+1
+          
+          end
+
+        end
+    end   
+  
+end   
+  else
+     
+      redirect_to orders_url
+  
+   end 
+      
+ 
+  
+end
+
+  # GET /orders/new
+  
+     def joined 
        
        @joined=current_user.ordetails
        
@@ -40,12 +87,12 @@ class OrdersController < ApplicationController
       @orders=Order.where(:id => @order_ids).paginate(:page => params[:page],  :per_page => 3)
 
    end 
-  
- # GET /orders/new
-  
+
   def new
-     
-     @groups =Group.where(:user_id => current_user.id).as_json
+  
+ 
+   
+    @groups =Group.where(:user_id => current_user.id).as_json
      @order = Order.new
      @friends= current_user.friendships  
      @t=[]
@@ -57,8 +104,6 @@ class OrdersController < ApplicationController
   
 
     end
-  
-   
  end
 
   # GET /orders/1/edit
@@ -106,11 +151,13 @@ class OrdersController < ApplicationController
     
     @order = Order.new(order_params)
     @order['status']='waiting'
-    @order['res_name']= @order['res_name'].strip 
+     @order['res_name']= @order['res_name'].strip 
     @inf=@order['infriends']
     @ing=@order['ingroups']
      
       
+       
+
     respond_to do |format|
       
        if @order.save
@@ -130,19 +177,11 @@ class OrdersController < ApplicationController
             
            if params.has_key?(:ingroups)
 
-            params.require(:ingroups).each  do |g|
-                 
-                 @g=Group.find(g)
-
-                 @invitedgroupfriends =@g.usgroups
-
-                 @invitedgroupfriends.each do |friend|
-                          
-                     #@testinvited=Invited.where(:order_id => @order['id']).where(:user_id => friend.user_id).present?                     
-                      
-                           if Invited.where(:order_id => @order['id']).where(:user_id => friend.user_id).blank?    
+             params.require(:ingroups).each  do |f|
+                     
+                           if Invited.where(:order_id => @order['id']).where(:user_id => f).blank?    
              
-                                 @invited=Invited.new(:order_id => @order['id'],:user_id => friend.user_id)
+                                 @invited=Invited.new(:order_id => @order['id'],:user_id => f)
                        
                                  @invited.save
                                    
@@ -151,14 +190,14 @@ class OrdersController < ApplicationController
                  end
             end 
 
-            end
+            
 
                
-
           @inviteds=Invited.where(order_id:@order['id'])
           @inviteds.each do |invited| 
           @inviteduser=User.find_by id: invited.user_id
           Notification.create(recipient: @inviteduser, actor: current_user, action: "invited", notifiable: @order )
+
         
           end   
 
@@ -178,6 +217,7 @@ class OrdersController < ApplicationController
               end
 
 
+
       
           format.html { redirect_to orders_url , notice: 'Order was successfully created.' }
           format.json { render :show, status: :created, location: @order }
@@ -188,10 +228,9 @@ class OrdersController < ApplicationController
     end
 
   end
-
+=begin
   # PATCH/PUT /orders/1
   # PATCH/PUT /orders/1.json
-=begin  
   def update
     respond_to do |format|
       if @order.update(order_params)
@@ -206,7 +245,6 @@ class OrdersController < ApplicationController
     end
   end
 =end
-
   # DELETE /orders/1
   # DELETE /orders/1.json
   def destroy
@@ -238,7 +276,14 @@ class OrdersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order
-      @order = Order.find(params[:id])
+
+       if params[:id] == 'joined'
+                 
+      redirect_to '/orders/joined/all'
+        else
+          @order = Order.find(params[:id])
+        end
+      
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

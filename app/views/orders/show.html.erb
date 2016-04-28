@@ -70,19 +70,23 @@ function handleSuccess(data) {
   <h2>Order Details</h2>
 <p id="notice"><%= notice %></p>
 
+<div class='row'>
+<div >
 <p>
   <strong>For:</strong>
   <%= @order.for %>
 </p>
 
 <p>
-  <strong>Res name:</strong>
+  <strong>Resturant name:</strong>
   <%= @order.res_name %>
 </p>
 
 <p>
-  <strong>Avatar:</strong>
-  <img class="img-rounded" alt="no image" width="80" height="80" src="<%= @order.avatar %>" />
+
+  <strong>Menu Image:</strong>
+  <img  class='img-thumb' alt='no menu image' width= '70px' src="<%= @order.avatar %>" />
+
 </p>
 
 <p>
@@ -91,10 +95,21 @@ function handleSuccess(data) {
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @order.user_id %>
+  <strong>Created by:</strong>
+  
+  <%= @user[0].name %> 
 </p>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+
+</div>
 <div>
+
+ <%= link_to @t.length.to_s+' friends joined ' , '/editorder/'+@order.id.to_s+'/showjoined/' %> 
+ <br>
+ <%= link_to @order.inviteds.length.to_s+'  friends invited', '/editorder/'+@order.id.to_s+'/showinvited/' %> 
+
+</div>
+</div>
+<%= link_to 'Back', orders_path %>
+
+

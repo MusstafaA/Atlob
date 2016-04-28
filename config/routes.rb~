@@ -1,12 +1,28 @@
 Rails.application.routes.draw do
  
+  get 'editorder/:id/showinvited/' => 'editorder#showinvited'
+
+  get 'editorder/:id/showjoined/'  => 'editorder#showjoined'
+
+  get 'editorder/:id/remove/'       => 'editorder#remove'
+  get 'editorder/:id/getuser/'       => 'welcome#getuser'
+  
+
   resources :ordetails
+
   resources :usgroups
+
   resources :friendships
+
   resources :groups
+
   resources :orders
+
   resources :inviteds
+
   resources :friendships
+
+
   #devise_for :users
   #devise_for :users
  # devise_for :models
@@ -112,10 +128,7 @@ Rails.application.routes.draw do
     end
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 29cff332167dc22ab18001ed033ae25650dfb155
 
 # notifications
 resources :notifications do
@@ -126,16 +139,11 @@ resources :notifications do
   end
 
 #join order
-resources :ordetails do
+resources :notifications do
   collection do
     post :join
   end
 
   end
 
-<<<<<<< HEAD
-
-  
-=======
->>>>>>> 29cff332167dc22ab18001ed033ae25650dfb155
 end

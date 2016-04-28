@@ -1,9 +1,157 @@
 <p id="notice"><%= notice %></p>
+<div class="container"> 
+	<div class="row"></div>
+	<div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+		<div class="panel panel-default">
+	  		<div class="panel-body">
+	    		<strong>Group names:</strong> <br>
+	      		<%= @group.name %>
+	  		</div>
+		</div>
+
+	</div>
+</div>
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Groups</h1>
+
+<!-- <table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead> -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-6">
+
+
+
+      
+       <!-- <div class="panel panel-default"> -->
+
+          <!-- <div class="panel-body"> -->
+            <div class="row">
+            <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+              <% @groups.each do |group| %>
+              <%= group.name %> <br><br>
+               <% end %>
+            </div>
+           
+          <div class="col-md-8 col-lg-8 col-sm-8 col-xs-8">
+              <% @groups.each do |group| %> 
+            <div class="btn-group">
+                  
+                  <%= link_to "Display", group,:class => "btn btn-success", :method => :get %> 
+                  
+                  <%= link_to "Delete", group,:class => "btn btn-success", :method => :delete , data: { confirm: 'Are you sure?' } %> 
+                    <br><br>
+                  <% end %>
+            </div>
+          </div>
+            
+        </div>
+
+      <!-- </div> -->
+
+    <!-- </div> -->
+
+
+
+
+   
+          <div id="group-form" style="display:none;">
+            <%= render 'form' %> 
+          </div>
+          <%= button_to "New Group", new_group_path,
+          :class => "btn btn-success fa fa-plus", :method => :get, remote: true %>
+
+
+
+    </div>
+    <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
+    <!-- <input type="text"></input>  -->
+   	
+      <div> 
+      <%= form_for @usgroup, :url => url_for(:controller => 'usgroups', :action => 'create') do |f| %>
+        <% if @usgroup.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@usgroup.errors.count, "error") %> prohibited this usgroup from being saved:</h2>
+
+            <ul>
+            <% @usgroup.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <%= f.label :user_id %><br>
+          <%= f.text_field :user_id , :list=>"user" , :required => true %>
+        </div>
+
+        <datalist id="user">
+          <% @friendships.each do |u| %>
+            <option value="<%= u.friend.name %>"><%= u.friend.name %></option>
+          <% end %>
+        </datalist>
+
+        <div class="field">
+          <%= f.hidden_field :group_id , :value=>params[:id]%>
+        </div>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      <% end %>
+
+      </div>
+
+      <div>
+      		
+
+      <table>
+        <thead>
+          <tr>
+            <th>User</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @group_users.each do |usgroup| %>
+            <tr>
+              <td><img class='img-circle img-responsive'  width='50px' height='40px' src="<%= usgroup.user.avatar%> "/></td>
+              <td><%= usgroup.user.name %></td>
+              <td><%= link_to 'Destroy', usgroup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+
+      		  
+
+      </div>
+
+    </div>
+
+
+
+       
+  </div> 
+
+</div>
+
+
+
 
 <p>
-  <strong>Name:</strong>
-  <%= @group.name %>
-</p>
 
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+  
+
+
+</p>

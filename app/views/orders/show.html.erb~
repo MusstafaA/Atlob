@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<div class='row'>
+<div >
+<p>
+  <strong>For:</strong>
+  <%= @order.for %>
+</p>
+
+<p>
+  <strong>Resturant name:</strong>
+  <%= @order.res_name %>
+</p>
+
+<p>
+  <strong>Menu Image:</strong>
+  <img  class='img-thumb' width= '70px' src="<%= @order.avatar %>" />
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @order.status %>
+</p>
+
+<p>
+  <strong>Created by:</strong>
+  
+  <%= @user[0].name %> 
+</p>
+
+</div>
+<div>
+
+ <%= link_to @t.length.to_s+' friends joined ' , '/editorder/'+@order.id.to_s+'/showjoined/' %> 
+ <br>
+ <%= link_to @order.inviteds.length.to_s+'  friends invited', '/editorder/'+@order.id.to_s+'/showinvited/' %> 
+
+</div>
+</div>
+<%= link_to 'Back', orders_path %>
+

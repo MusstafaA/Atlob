@@ -1,4 +1,4 @@
-
+<div class=' col-md-6 col-lg-6 col-sm-6 col-xs-6'>
 <%= form_for(@order) do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
@@ -12,10 +12,9 @@
     </div>
   <% end %>
 
-  
   <div class="field">
     <%= f.label :for %><br>
-     <%= f.select :for, ['breakfast','dinner'], :selected => 'breakfast' ,:class => 'form-control' %>
+     <%= f.select :for, ['breakfast','dinner'], :id =>'for',:selected => 'breakfast'  ,:class => 'form-control' %>
   </div>
  
   <div class="field">
@@ -28,39 +27,93 @@
     <%= f.file_field :avatar, :class => 'form-control' , :accept => 'image/*' %>
     </div>
  
-   <div class="field">
-         
-    <%= f.label :Invite_groups %><br>
-         
-        <select name='ingroups[]' multiple="true"  class='form-contol' > 
-            <%  @groups.each  do |g| %>
-                  
-               <option value="<%=g['id']%>"> <%= g["name"] %></option>
-        
-             <% end %>
-          
-         </select>
-       
-   </div>
-     
-      <div class="field">
+
+  <div class="field">
          <% @t=@t.as_json %>
 
     <%= f.label :Invite_friends %><br>
-                <select name='infriends[]' multiple="true"  class='form-contol'  > 
+                <select name='infriends[]'  id='friends' multiple="true" style='width:370px;'  class='form-contol'  > 
 
             <%  @t.each  do |friend| %>
+                     
+                     <% @name=friend[0]['name']  %> 
+                     <% @image=friend[0]['avatar'] %> 
+
+                     <% @user= User.where(:id => friend[0]['id']) %>
+
+                 <option  image="<%= @user[0].avatar %>" value="<%=@user[0].id%>" class="multSelktrImg" >
+                               
+                                 <%= @name %>   
+                                  
+                   </option>
                   
-                  <option value='<%=friend[0]["id"]%>'> <%= friend[0]['name'] %></option>
+
         
              <% end %>
         </select>
        
+       
+   </div>
+
+   <div class="field">
+         
+    <%= f.label :Invite_groups %><br>
+         
+        <select   name='ingroups[]'id='groups'  multiple="true" style="width: 370px;"  class='form-contol' > 
+            <%  @groups.each  do |g| %>
+               
+                      <% @g=Group.find(g['id']) %> 
+                   <% @invitedgroupfriends =@g.usgroups %>
+                    
+
+                  <% if @invitedgroupfriends.length != 0 %> 
+
+
+                     <optgroup  label="<%= g["name"] %>">  
+
+                     
+
+                  <% @invitedgroupfriends.each do |friend|  %>
+
+                          <% @user= User.where(:id => friend.user_id) %>
+                                
+                          <option image="<%=@user[0].avatar%>" value="<%=@user[0].id%>" class="multSelktrImg" >
+                               
+                                 <%=@user[0].name %>   
+                                  
+                          </option>
+
+                  <% end %>
+
+                  <% end %>
+              </optgroup>
+
+              <% end %>
+         </select>
+
+         
+      
    </div>
    
+         
+     
+
+   
+    
+   <br>
 
    <%= f.hidden_field :user_id,{value:current_user.id} %>
   <div class="actions">
     <%= f.submit  :class => 'form-control' , :style=> 'width:130px' %>
   </div>
+
+   
+
 <% end %>
+<br>
+<%= link_to 'Back', orders_path %>
+</div>
+
+
+
+
