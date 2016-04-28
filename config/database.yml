@@ -1,32 +1,25 @@
-# MySQL.  Versions 5.0+ are recommended.
-#
-# Install the MYSQL driver
-#   gem install mysql2
-#
-# Ensure the MySQL gem is defined in your Gemfile
-#   gem 'mysql2'
-#
-# And be sure to use new-style password hashing:
-#   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
-#
+
 default: &default
-  adapter: mysql2
-  encoding: utf8
+  adapter: sqlite3
   pool: 5
-  username: root
-  password: 12345
-  socket: /var/run/mysqld/mysqld.sock
+  timeout: 5000
+
+
 
 development:
-  <<: *default
-  database: atlob_development
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
-  database: atlob_test
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -48,7 +41,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: atlob_production
-  username: atlob_app
-  password: <%= ENV['ATLOB_APP_DATABASE_PASSWORD'] %>
+  adapter: sqlite3
+  database: db/production.sqlite3
+  pool: 5
+  timeout: 5000

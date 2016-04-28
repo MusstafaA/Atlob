@@ -40,7 +40,7 @@ class UsgroupsController < ApplicationController
 
         respond_to do |format|
           if @usgroup.save
-            format.html { redirect_to groups_url, notice: 'Usgroup was successfully created.' }
+            format.html { redirect_to groups_url ,notice: 'Usgroup was successfully created.' }
            # format.json { render :show, status: :created, location: @usgroup }
           else
             format.html { render :new }

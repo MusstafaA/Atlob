@@ -11,119 +11,112 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160427142817) do
+ActiveRecord::Schema.define(version: 20160429142817) do
 
   create_table "activities", force: :cascade do |t|
-    t.integer  "trackable_id",   limit: 4
-    t.string   "trackable_type", limit: 255
-    t.integer  "owner_id",       limit: 4
-    t.string   "owner_type",     limit: 255
-    t.string   "key",            limit: 255
-    t.text     "parameters",     limit: 65535
-    t.integer  "recipient_id",   limit: 4
-    t.string   "recipient_type", limit: 255
+    t.integer  "trackable_id"
+    t.string   "trackable_type"
+    t.integer  "owner_id"
+    t.string   "owner_type"
+    t.string   "key"
+    t.text     "parameters"
+    t.integer  "recipient_id"
+    t.string   "recipient_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "activities", ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type", using: :btree
-  add_index "activities", ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type", using: :btree
-  add_index "activities", ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type", using: :btree
+  add_index "activities", ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type"
+  add_index "activities", ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type"
+  add_index "activities", ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"
 
   create_table "friendships", force: :cascade do |t|
-    t.integer  "friend_id",  limit: 4
-    t.integer  "user_id",    limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.integer  "friend_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "groups", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.integer  "user_id",    limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "groups", ["user_id"], name: "index_groups_on_user_id", using: :btree
+  add_index "groups", ["user_id"], name: "index_groups_on_user_id"
 
   create_table "inviteds", force: :cascade do |t|
-    t.integer "user_id",  limit: 4
-    t.integer "order_id", limit: 4
+    t.integer "user_id"
+    t.integer "order_id"
   end
 
-  add_index "inviteds", ["order_id"], name: "index_inviteds_on_order_id", using: :btree
-  add_index "inviteds", ["user_id"], name: "index_inviteds_on_user_id", using: :btree
+  add_index "inviteds", ["order_id"], name: "index_inviteds_on_order_id"
+  add_index "inviteds", ["user_id"], name: "index_inviteds_on_user_id"
 
   create_table "notifications", force: :cascade do |t|
-    t.integer  "recipient_id",    limit: 4
-    t.integer  "actor_id",        limit: 4
+    t.integer  "recipient_id"
+    t.integer  "actor_id"
     t.datetime "read_at"
-    t.string   "action",          limit: 255
-    t.integer  "notifiable_id",   limit: 4
-    t.string   "notifiable_type", limit: 255
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.string   "action"
+    t.integer  "notifiable_id"
+    t.string   "notifiable_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string   "for",        limit: 255
-    t.string   "res_name",   limit: 255
-    t.string   "avatar",     limit: 255
-    t.string   "status",     limit: 255
-    t.integer  "user_id",    limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "for"
+    t.string   "res_name"
+    t.string   "avatar"
+    t.string   "status"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "ordetails", force: :cascade do |t|
-    t.string   "item",       limit: 255
-    t.float    "price",      limit: 24
-    t.integer  "amount",     limit: 4
-    t.text     "comment",    limit: 65535
-    t.integer  "user_id",    limit: 4
-    t.integer  "order_id",   limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "item"
+    t.float    "price"
+    t.integer  "amount"
+    t.text     "comment"
+    t.integer  "user_id"
+    t.integer  "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "ordetails", ["order_id"], name: "index_ordetails_on_order_id", using: :btree
-  add_index "ordetails", ["user_id"], name: "index_ordetails_on_user_id", using: :btree
+  add_index "ordetails", ["order_id"], name: "index_ordetails_on_order_id"
+  add_index "ordetails", ["user_id"], name: "index_ordetails_on_user_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "", null: false
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
-    t.string   "reset_password_token",   limit: 255
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 255
-    t.string   "last_sign_in_ip",        limit: 255
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
-    t.string   "name",                   limit: 255,              null: false
-    t.string   "avatar",                 limit: 255
-    t.string   "provider",               limit: 255
-    t.string   "uid",                    limit: 255
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "name",                   default: "", null: false
+    t.string   "avatar"
+    t.string   "provider"
+    t.string   "uid"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
   create_table "usgroups", force: :cascade do |t|
-    t.integer "user_id",  limit: 4
-    t.integer "group_id", limit: 4
+    t.integer "user_id"
+    t.integer "group_id"
   end
 
-  add_index "usgroups", ["group_id"], name: "index_usgroups_on_group_id", using: :btree
-  add_index "usgroups", ["user_id"], name: "index_usgroups_on_user_id", using: :btree
+  add_index "usgroups", ["group_id"], name: "index_usgroups_on_group_id"
+  add_index "usgroups", ["user_id"], name: "index_usgroups_on_user_id"
 
-  add_foreign_key "groups", "users"
-  add_foreign_key "inviteds", "orders"
-  add_foreign_key "inviteds", "users"
-  add_foreign_key "ordetails", "orders"
-  add_foreign_key "ordetails", "users"
-  add_foreign_key "usgroups", "groups"
-  add_foreign_key "usgroups", "users"
 end
