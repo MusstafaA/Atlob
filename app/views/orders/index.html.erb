@@ -1,13 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Orders</h1>
-<div class='row' >
+<h1 style='color:#5B5757'>Listing Orders</h1>
+<div class='row' style='margin-bottom: 20px' >
 <%= link_to 'New Order', new_order_path ,:class =>'btn btn-default' %>
 <%= link_to 'Joined Orders', '/orders/joined/all', :class =>'btn btn-default' %>
+
 </div> 
-<table class='col-md-8 col-lg-8 col-sm-4 col-xs-12 table table-hover table-striped table-bordered'>
+<div class='row' >
+
+<table style='color:#428bca;'class='col-md-8 col-lg-8 col-sm-4 col-xs-12 table table-hover table-striped table-bordered'>
   <thead>
-    <tr>
+    <tr style='color:#5B5757'>
       <th>menu</th>
       <th>Order</th>
       <th>Resturant name</th>
@@ -61,7 +64,7 @@
         <td ><%= link_to 'Show', order ,:class => 'btn btn-default'%></td>
 
         <td><%=  link_to 'Finish', edit_order_path(order), :class => 'btn btn-default' %></td>
-        <td><%=  link_to 'Destroy',order, method: :delete ,:class => 'btn btn-default' %></td>
+        <td><%=  link_to 'Cancel',order, method: :delete ,:class => 'btn btn-default' %></td>
       </tr>
        <% else %>
          
@@ -73,7 +76,7 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 <div class="flickr_pagination">
     <div class="page_info">

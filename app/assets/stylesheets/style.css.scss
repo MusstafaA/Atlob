@@ -17,5 +17,44 @@ h1, h2, p { margin:10px 0 }
 .multSelktrImg span{position: relative;top: 10px;vertical-align: middle;
     display: inline-flex;}
 .multSelktrImg input {vertical-align: -2px;}
-.multSelktrImg img {position: relative;height: 30px;margin: 2px 6px;top: -10px;}
+.multSelktrImg img {position: relative;height: 70px; width:70px;margin: 2px 6px;top: -10px;}
 
+
+
+     #order_for{
+
+         width:180px;
+
+      }
+
+   #groups option{
+     
+     direction:rtl;
+   
+   }
+
+
+  input[type='search']{
+
+      height:30px;
+      width:150px;    
+  }
+
+  li > a[href='#']{
+
+  color:#1c94c4;
+ }
+  
+ div[class='field'] > label{
+
+  color:#8A8888
+;
+ }
+
+ li[class=' multSelktrImg'] label{
+ 
+   height: 80px;
+
+ }
+
+ 

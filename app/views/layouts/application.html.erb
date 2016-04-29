@@ -6,21 +6,8 @@
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <style>
+  <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css" />
 
-     #order_for{
-
-         width:200px;
-
-      }
-
-   #groups option{
-     
-     direction:rtl;
-   
-   }
-
-  </style>
 </head>
 <body id="top" onload="prettyPrint();">
 
@@ -92,7 +79,7 @@
 
     <section id="middle">
       <div class="container" >
-      	<div ></div>
+        <div ></div>
 
         <div class="row">
 
@@ -100,7 +87,7 @@
 
  
 
-    	<%= yield %>
+      <%= yield %>
 
 
 
@@ -114,21 +101,19 @@
 <script type="text/javascript">
 $("#groups").multiselect({
 
-	header: "Select groups to invite",
     noneSelectedText: "Select groups to invite",
 }).multiselectfilter();
 $("#friends").multiselect({
 
-		header: "Select Friends to invite",
         noneSelectedText: "Select friends to invite",
 
 }).multiselectfilter();
 $("#order_for").multiselect({
-		multiple: false,
-		header: "Select an option",
-		noneSelectedText: "Select an Option",
-		selectedList: 1
-	});
+    multiple: false,
+    header: "Select an option",
+    noneSelectedText: "Select an Option",
+    selectedList: 1
+  });
 
 </script>
 
