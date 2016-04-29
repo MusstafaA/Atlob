@@ -1,11 +1,11 @@
-<h2>Sign up</h2>
+<h2 style='color:#5B5757' >Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
+<div class='col-md-8 col-lg-8 col-sm-4 col-xs-12'>
    <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
+    <%= f.text_field :name, autofocus: true ,class:'form-control'%>
   </div>
 
   <div class="field">
@@ -16,24 +16,25 @@
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em style='color:#428bca;'>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off" ,class:'form-control'%>
   </div>
 
     <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" ,class:'form-control'%>
     </div>
   
     <div class="field">
     <%= f.label :uploadfile %>
-    <%= f.file_field :avatar,  :accept => 'image/*' %>
+    <%= f.file_field :avatar,  :accept => 'image/*' ,class:'form-control'%>
     </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="actions" style='margin-top: 20px' >
+    <%= f.submit "Sign up",class:'form-control',:style => 'width:90px' %>
+    <%= render "devise/shared/links" %>
   </div>
 <% end %>
+</div>
 
-<%= render "devise/shared/links" %>
