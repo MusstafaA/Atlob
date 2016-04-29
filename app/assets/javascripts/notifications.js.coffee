@@ -65,7 +65,7 @@ class Notifications
 			method: "POST"
 		)
 
-		window.location.href = '/orders/'+or_id+'/ordetails/new'		
+				
 
 
 
@@ -80,7 +80,7 @@ class Notifications
 			method: "POST"
 
 		)		
-		window.location.href = '/orders/'+or_id+'/ordetails/new'
+		
 
 
 

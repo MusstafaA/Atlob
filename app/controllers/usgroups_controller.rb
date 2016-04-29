@@ -38,15 +38,16 @@ class UsgroupsController < ApplicationController
 
         @usgroup = Usgroup.new(user_id: @usersByName.id , group_id: usgroup_params[:group_id])
 
-        respond_to do |format|
+        # respond_to do |format|
           if @usgroup.save
-            format.html { redirect_to groups_url ,notice: 'Usgroup was successfully created.' }
+            redirect_to "/groups/"+usgroup_params[:group_id]+""
+            # format.html { redirect_to groups_url ,notice: 'Usgroup was successfully created.' }
            # format.json { render :show, status: :created, location: @usgroup }
           else
-            format.html { render :new }
-            format.json { render json: @usgroup.errors, status: :unprocessable_entity }
+            # format.html { render :new }
+            # format.json { render json: @usgroup.errors, status: :unprocessable_entity }
           end
-        end
+        # end
 
       end
 
@@ -77,11 +78,14 @@ class UsgroupsController < ApplicationController
   # DELETE /usgroups/1
   # DELETE /usgroups/1.json
   def destroy
+    @grId = @usgroup.group_id.to_s
+    
     @usgroup.destroy
-    respond_to do |format|
-      format.html { redirect_to groups_url, notice: 'Usgroup was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+     redirect_to "/groups/"+@grId+""
+    # respond_to do |format|
+    #   format.html { redirect_to groups_url, notice: 'Usgroup was successfully destroyed.' }
+    #   format.json { head :no_content }
+    # end
   end
 
   private
