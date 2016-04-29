@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= current_user.name %></h1>
+
+<fieldset class="scroll col-sm-12">
+  <legend>User Profile:</legend>
+  <% @users.each do |user| %>
+    <div class="col-sm-7">
+      <img class="col-sm-3" src="<%= user.avatar %>">
+      <div class="col-sm-8">
+        <span class="col-sm-12"><%= user.name %></span>
+        <span class="col-sm-12"><%= user.email %></span>
+        <span class="col-sm-12">Signed in Counts: <%= user.sign_in_count %></span>
+        <span class="col-sm-12">Last signed in: <%= user.last_sign_in_at %></span>
+      </div>
+    </div>
+  <% end %>
+  <div><a href="/users/edit" class="btn btn-primary">Edit Data</a></div>
+</fieldset>

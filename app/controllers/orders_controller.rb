@@ -245,12 +245,12 @@ end
         
           end   
 
-              @user_friends= Friendship.where(:user_id => current_user.id)
+              @user_friends= Friendship.where(:friend_id => current_user.id)
               @myfriends=[]
               @i=0
               if @user_friends
                   @user_friends.each  do |friend|             
-                       @myfriends[@i]=User.find_by(:id => friend.friend_id)
+                       @myfriends[@i]=User.find_by(:id => friend.user_id)
                        @i=@i+1            
                   end
 

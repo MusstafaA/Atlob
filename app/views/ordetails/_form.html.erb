@@ -25,7 +25,8 @@
                   <td><%=  order.amount %></td>
                   <td><%=  order.price %> LE</td>
                   <td><%=  order.comment %></td>
-                  <td><%=  link_to 'Cancel',order, method: :delete,:class => 'btn btn-danger' %></td>
+                  <td><%=  link_to 'Cancel',order, method: :delete,:class => 'btn btn-danger' %></td>                  
+                  
                 </tr>
                 <% end %>
           <% end %>
@@ -66,11 +67,11 @@
           </div>
           <div class="field form-group">
             <%= f.label :price %><br>
-            <%= f.number_field :price , autofocus: true ,:class=>'form-control', :step => 'any' %>
+            <%= f.number_field :price , autofocus: true ,:class=>'form-control', :step => 'any' ,min: 0 %>
           </div>
           <div class="field form-group">
             <%= f.label :amount %><br>
-            <%= f.number_field :amount ,autofocus: true ,:class=>'form-control'%>
+            <%= f.number_field :amount ,autofocus: true ,:class=>'form-control',min: 0 %>
           </div>
           <div class="field form-group">
             <%= f.label :comment %><br>

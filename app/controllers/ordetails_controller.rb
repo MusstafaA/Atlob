@@ -5,11 +5,13 @@ class OrdetailsController < ApplicationController
   # GET /ordetails.json
   def index
     @ordetails = Ordetail.all
+    redirect_to '/'
   end
 
   # GET /ordetails/1
   # GET /ordetails/1.json
   def show
+    redirect_to '/'
   end
 
   # GET /ordetails/new
@@ -71,6 +73,7 @@ class OrdetailsController < ApplicationController
 
   # GET /ordetails/1/edit
   def edit
+    redirect_to '/'
   end
 
   # POST /ordetails

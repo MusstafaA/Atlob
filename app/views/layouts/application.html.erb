@@ -62,7 +62,7 @@
 
             <li><img class="img-circle" alt="no image" width="50" height="50" src="<%= current_user.avatar %>" /></li>
 
-            <li><a href="/users/edit"><%= current_user.name %></a></li>
+            <li class="<%= params[:controller]== 'users' ? 'active' : '' %>"><%= link_to(current_user.name, user_path(current_user)) %></li>
 
 
             <li><%= link_to 'Logout', destroy_user_session_path ,method: :delete %></li>
