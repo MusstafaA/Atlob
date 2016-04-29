@@ -130,11 +130,11 @@ class OrdetailsController < ApplicationController
     # no  record for this id
       Ordetail.create(user_id: params[:user_id] , order_id: params[:order_id])
       Notification.create(recipient: @orderCreator, actor: @actor, action: "joined", notifiable: @order )
-      redirect_to "/orders/"+params[:order_id]+"/ordetails/new"
+      
     else
       # at least 1 record for this id
     end
-
+    redirect_to "/orders/"+params[:order_id]+"/ordetails/new"
     # respond_to do |format|
     #   format.html { redirect_to action: "new", order_id: params[:order_id] }
     # end
