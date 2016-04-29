@@ -16,9 +16,12 @@ class OrdersController < ApplicationController
   # GET /orders/1.json
    def show
            
-       @checkjoined=Ordetail.where(:order_id => @order.id).where(:user_id => @order.user_id )
+    @ordered_list = Ordetail.where(:order_id => params[:id]).paginate(:page => params[:page],  :per_page => 5)  
 
-  if current_user.id == @order.user_id or @checkjoined.present?
+  @checkjoined=Ordetail.where(:order_id => @order.id).where(:user_id => current_user.id)
+  
+  @checkfriend=Friendship.where(:user_id => @order.user_id).where(:friend_id => current_user.id)
+  if current_user.id == @order.user_id or @checkjoined.present? or @checkfriend.present?
     
      @user=User.where(:id => @order.user_id) 
         
@@ -144,7 +147,6 @@ end
          @t[@i]=User.where(:id => friend.friend_id)
          @i=@i+1
   
-
     end
     
     @order = Order.new(order_params)
@@ -175,19 +177,11 @@ end
             
            if params.has_key?(:ingroups)
 
-            params.require(:ingroups).each  do |g|
-                 
-                 @g=Group.find(g)
-
-                 @invitedgroupfriends =@g.usgroups
-
-                 @invitedgroupfriends.each do |friend|
-                          
-                     #@testinvited=Invited.where(:order_id => @order['id']).where(:user_id => friend.user_id).present?                     
-                      
-                           if Invited.where(:order_id => @order['id']).where(:user_id => friend.user_id).blank?    
+             params.require(:ingroups).each  do |f|
+                     
+                           if Invited.where(:order_id => @order['id']).where(:user_id => f).blank?    
              
-                                 @invited=Invited.new(:order_id => @order['id'],:user_id => friend.user_id)
+                                 @invited=Invited.new(:order_id => @order['id'],:user_id => f)
                        
                                  @invited.save
                                    
@@ -196,15 +190,34 @@ end
                  end
             end 
 
-            end
+            
 
                
           @inviteds=Invited.where(order_id:@order['id'])
-
           @inviteds.each do |invited| 
           @inviteduser=User.find_by id: invited.user_id
           Notification.create(recipient: @inviteduser, actor: current_user, action: "invited", notifiable: @order )
-        end     
+
+        
+          end   
+
+              @user_friends= Friendship.where(:user_id => current_user.id)
+              @myfriends=[]
+              @i=0
+              if @user_friends
+                  @user_friends.each  do |friend|             
+                       @myfriends[@i]=User.find_by(:id => friend.friend_id)
+                       @i=@i+1            
+                  end
+
+                  @myfriends.each  do |myfriend| 
+                        # @notifyfriend=User.find_by id: myfriend.id           
+                       Notification.create(recipient:myfriend, actor: current_user, action: "created", notifiable: @order )        
+                  end
+              end
+
+
+
       
           format.html { redirect_to orders_url , notice: 'Order was successfully created.' }
           format.json { render :show, status: :created, location: @order }

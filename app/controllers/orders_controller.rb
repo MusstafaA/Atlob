@@ -15,8 +15,8 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
    def show
-           
-      
+  @ordetail = Ordetail.new      
+  @ordered_list = Ordetail.where(:order_id => params[:id]).paginate(:page => params[:page],  :per_page => 5)  
 
   @checkjoined=Ordetail.where(:order_id => @order.id).where(:user_id => current_user.id)
   

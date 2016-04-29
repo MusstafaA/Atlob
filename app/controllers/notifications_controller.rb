@@ -2,7 +2,7 @@ class NotificationsController < ApplicationController
 	before_action :authenticate_user!
 
 	def index
-		@notifications = Notification.where(recipient: current_user).unread 
+		@notifications = Notification.where(recipient: current_user).where.not(action: "created").unread 
 
 		@all_notfications= Notification.where(recipient: current_user).paginate(:page => params[:page], :per_page => 5)
 		

@@ -65,7 +65,7 @@ class Notifications
 			method: "POST"
 		)
 
-		window.location.href = 'http://localhost:3000/orders/'+or_id+'/ordetails/new'		
+		window.location.href = '/orders/'+or_id+'/ordetails/new'		
 
 
 
@@ -80,7 +80,7 @@ class Notifications
 			method: "POST"
 
 		)		
-		window.location.href = 'http://localhost:3000/orders/'+or_id+'/ordetails/new'
+		window.location.href = '/orders/'+or_id+'/ordetails/new'
 
 
 
@@ -101,7 +101,7 @@ class Notifications
 		items = $.map data, (notification)	->
 				if notification.action is 'joined'
 					"<li><span style='display:inline-block;' >#{notification.actor}  #{notification.action} your </span><a class='btn btn-primary' style='display:inline-block;'  href='#{notification.url}'> #{notification.notifiable.for} order</a></li>"
-				else
+				else if notification.action is 'invited'
 					"<li><span style='display:inline-block;' >#{notification.actor}  #{notification.action} you for </span><a class='btn btn-primary' style='display:inline-block;'  href='#{notification.url}'> #{notification.notifiable.for} order</a><button style='display:inline-block;' class='btn btn-success joinBtn' orderId='#{notification.notifiable.id}' ownerId='#{notification.actorid}' userId='#{notification.recipient.id}'>Join</button></li>"
 
 
@@ -114,12 +114,12 @@ class Notifications
 
 
 	handleFeeds: (data) ->
-		console.log(data)
-		items = $.map data, (notification)	->
-					"<p><span style='display:inline-block;' >#{notification.actor} has #{notification.action} a &nbsp </span><a  style='display:inline-block;'  href='#{notification.url}'> #{notification.notifiable.for} order</a> from #{notification.notifiable.res_name}</p>"
 
-		console.log(items[1])
-		$("[data-behavior='notification-feeds']").html(items)		
+		itemss = $.map data, (notificationfeed)	->
+					"<p><span style='display:inline-block;' >#{notificationfeed.actor} has #{notificationfeed.action} a &nbsp </span><a  style='display:inline-block;'  href='#{notificationfeed.url}'> #{notificationfeed.notifiable.for} order</a> from #{notificationfeed.notifiable.res_name}</p>"
+
+
+		$("[data-behavior='notification-feeds']").html(itemss)		
 	
 
 jQuery ->

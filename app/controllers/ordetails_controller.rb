@@ -14,17 +14,59 @@ class OrdetailsController < ApplicationController
 
   # GET /ordetails/new
   def new
-    @ordetail = Ordetail.new(order_id: params[:order_id])
-    @status = Order.find_by(id: params[:order_id])
-    if @status
-      if @status.status == 'waiting'
-        @ordered_list = Ordetail.where(order_id: params[:order_id] , :user_id => current_user.id).paginate(:page => params[:page], :per_page => 5)
-      else
-        @cancel_message = 'Sorry Order Is Canceled!'
-      end
-    else
-      @finish_message = 'Sorry Order Is Finished!'
-    end  
+   
+      @order=Order.where(:id => params[:order_id])
+      @order=@order[0]
+      if @order
+          if @order.status != 'finished'  
+                  @checkjoined=Ordetail.where(:order_id => @order.id).where(:user_id => current_user.id)
+                  @checkfriend=Friendship.where(:user_id =>1)
+
+
+               # if current_user.id == @order.user_id or @checkjoined.present? 
+
+                   @ordetail = Ordetail.new(order_id: params[:order_id])
+                   @ordered_list = Ordetail.where(order_id: params[:order_id] , :user_id => current_user.id).paginate(:page => params[:page], :per_page => 5)
+                   @user=User.where(:id => @order.user_id) 
+                      
+                    @i=0
+                    @t=[]
+                      
+                   @joined=@order.ordetails
+                 
+                  if    @joined.length != 0
+
+                         @joined.each  do |joined|
+                                    
+                                 @temp=User.where(:id => joined.user_id)
+                                 
+                                     if @i == 0
+                                            @t[@i]=@temp
+                                 
+                                            @i=@i+1
+                                
+                                     else
+
+                                             if @t.include? @temp == false 
+
+                                             
+                                               @t[@i]=@temp
+                                             
+                                               @i=@i+1
+                                            
+                                            end
+
+                                      end
+                          end   
+                  end
+            else
+                @finish_message="Sorry this order is Finished"
+            end      
+
+    else          
+        @cancel_message="Sorry this order is canceled"
+    end   
+
   end
 
   # GET /ordetails/1/edit
@@ -84,9 +126,9 @@ class OrdetailsController < ApplicationController
     @orderCreator=User.find_by id: params[:creator_id]
     @order=Order.find_by id: params[:order_id]
 
-    if Ordetail.where(user_id: params[:user_id] , order_id: params[:order_id]).blank?
+    if Notification.find_by(actor_id: params[:user_id] , notifiable_id: params[:order_id]).blank?
     # no  record for this id
-    Ordetail.create(user_id: params[:user_id] , order_id: params[:order_id])
+      Ordetail.create(user_id: params[:user_id] , order_id: params[:order_id])
       Notification.create(recipient: @orderCreator, actor: @actor, action: "joined", notifiable: @order )
     else
       # at least 1 record for this id
