@@ -18,9 +18,53 @@ class OrdersController < ApplicationController
   @ordetail = Ordetail.new      
   @ordered_list = Ordetail.where(:order_id => params[:id]).paginate(:page => params[:page],  :per_page => 5)  
 
+   @inviteds = Invited.where(:order_id => @order.id)
+         
+         @invitedall=[]
+         @i=0
+         @inviteds.each  do |invited|
+     
+           @invitedall[@i]=User.where(:id => invited.user_id)
+           @i=@i+1
+  
+
+    end
+     @joined =Ordetail.where(:order_id => @order.id)
+         
+         @joinedall=[]
+         @i=0
+
+         @joined.each  do |joined|
+               if joined.user_id != current_user.id 
+           @temp=User.where(:id => joined.user_id)
+           
+               if @i == 0
+                      @joinedall[@i]=@temp
+           
+                     @i=@i+1
+          
+               else
+
+           if @joinedall.include? @temp == false 
+
+           
+             @joinedall[@i]=@temp
+           
+             @i=@i+1
+          
+          end
+
+        end
+
+           
+     end
+  end
+
+  
   @checkjoined=Ordetail.where(:order_id => @order.id).where(:user_id => current_user.id)
   
-  @checkfriend=Friendship.where(:user_id => @order.user_id).where(:friend_id => current_user.id)
+  @checkfriend=Friendship.where(:user_id => current_user.id).where(:friend_id => @order.user_id)
+  
   if current_user.id == @order.user_id or @checkjoined.present? or @checkfriend.present?
     
      @user=User.where(:id => @order.user_id) 
@@ -33,7 +77,7 @@ class OrdersController < ApplicationController
     if    @joined.length != 0
 
      @joined.each  do |joined|
-              
+              if joined.user_id != current_user.id 
            @temp=User.where(:id => joined.user_id)
            
                if @i == 0
@@ -54,7 +98,7 @@ class OrdersController < ApplicationController
 
         end
     end   
-  
+  end
 end   
   else
      

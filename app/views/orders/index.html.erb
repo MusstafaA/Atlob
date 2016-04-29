@@ -36,7 +36,8 @@
      <% if    @joined.length != 0 %>
 
     <% @joined.each  do |joined| %>
-              
+              <% if joined.user_id != current_user.id %>
+
          <%  @temp=User.where(:id => joined.user_id) %>
            
               <% if @i == 0 %>
@@ -56,6 +57,7 @@
           <% end %>
 
         <% end %>
+     <%  end %>  
  <%  end %>   
   
 <% end %>

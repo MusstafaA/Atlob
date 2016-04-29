@@ -30,7 +30,7 @@ class EditorderController < ApplicationController
          @i=0
 
          @joined.each  do |joined|
-              
+               if joined.user_id != current_user.id 
            @temp=User.where(:id => joined.user_id)
            
                if @i == 0
@@ -52,12 +52,11 @@ class EditorderController < ApplicationController
         end
 
            
-  
+     end
   end
 
      
-
-  end
+end
 
   def getinvited
   
