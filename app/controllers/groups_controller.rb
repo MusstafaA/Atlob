@@ -16,7 +16,7 @@ class GroupsController < ApplicationController
      @groups = Group.where(user_id: current_user.id)
      @group = Group.new
      @usgroup = Usgroup.new
-
+     @group_current = Group.find_by(:id => params[:id])
      @group_users = Usgroup.where(:group_id => params[:id])
 
      # @g_users=[]
@@ -25,6 +25,7 @@ class GroupsController < ApplicationController
      #    @g_users.push(@userDetails)
      # end
      @friendships = Friendship.where(user_id: current_user.id)
+
      
   end
 

@@ -12,67 +12,6 @@ body {
   margin_top:7px;
 }
 
-.navbar{
-  //overflow:auto;
-  min-height: 100px;
-  background: #36424a;
-  color: #fff;
-  font-size: 18px;
-  border: 0;
-  border-radius: 0;
-}
-
-.navbar h1{
-  margin: 10px 0 0 0;
-  padding: 0;
-
-}
-
-.navbar a{
-  color:#fff !important;
-}
-
-.navbar a:hover{
-  color:#fff953f;
-}
-
-.navbar a.navbar-brand:hover{
-  color:#fff !important;
-}
-
-
-
-.navbar ul{
-  margin-top: 22px;
-}
-
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
-  background: none;
-  background-color:#ff953f !important; 
-}
-
-.search-form{
-  margin-top:30px;
-}
-
-.search-form input[type='text']{
-  border-radius: 0;
-  height: 38px;
-}
-
-.search-form .btn{
-  border: 0;
-  height:38px;
-  margin-top: 0;
-  border-radius: 0;
-  margin-left: -5px;
-}
-
-.search-form .form-control{
-  background: #f4f4f4;
-  border: 1px solid #eee;
-}
-
 .btn{
   background: none;
   border-radius: 0px;
@@ -171,3 +110,11 @@ footer p{
     width: 400px;
     height: 600px;    
 }
+
+.log1{
+  
+  margin-left:20px;
+  font-size:18px !important;
+
+}
+

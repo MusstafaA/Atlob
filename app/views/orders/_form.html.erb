@@ -46,7 +46,7 @@
 
    <div class="field">
     <%= f.label :menu_image %>
-    <%= f.file_field :avatar, :class => 'form-control' , :accept => 'image/*',:style =>'color:#1c94c4;width:200px' %>
+    <%= f.file_field :avatar, :accept => 'image/*',:style =>'color:#1c94c4;width:200px; margin-bottom:30px;'%>
     </div>
  
 </fieldset>
@@ -59,7 +59,7 @@
          <% @t=@t.as_json %>
 
     <%= f.label :Invite_friends %><br>
-                <select name='infriends[]'  id='friends' multiple="true" style="width:300px"  class='form-contol col-md-12 col-lg-12 col-sm-12 col-xs-12'> 
+                <select name='infriends[]' id='friends' multiple="true" style="width:300px;"  class='form-contol col-md-12 col-lg-12 col-sm-12 col-xs-12 friendSelect'> 
 
             <%  @t.each  do |friend| %>
                      
@@ -86,7 +86,7 @@
          
     <%= f.label :Invite_groups %><br>
          
-        <select   name='ingroups[]'id='groups'  multiple="true" style="width:300px"  class='form-contol col-md-12 col-lg-12 col-sm-12 col-xs-12' > 
+        <select   name='ingroups[]'id='groups'  multiple="true" style="width:300px"  class='form-contol col-md-12 col-lg-12 col-sm-12 col-xs-12 groupSelect' > 
             <%  @groups.each  do |g| %>
                
                       <% @g=Group.find(g['id']) %> 
@@ -137,7 +137,7 @@
       <br>
          <br>
   <div class="actions">
-    <%= f.submit  :class => 'form-control' , :style=> 'width:130px' %>
+    <%= f.submit  :class => 'form-control btn-primary' , :style=> 'width:130px' %>
   </div>
 
   

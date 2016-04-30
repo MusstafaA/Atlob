@@ -6,7 +6,6 @@ class FriendshipsController < ApplicationController
   def index
     @friendships = Friendship.where(user_id: current_user.id)
     #@friendships = Friendship.all
-
     @friendship = Friendship.new
     @users = User.all
   end
@@ -78,6 +77,16 @@ class FriendshipsController < ApplicationController
   # DELETE /friendships/1
   # DELETE /friendships/1.json
   def destroy
+    # @friendshipId = Friendship.find_by(id: params[:id], user_id: current_user.id)
+
+    #  @groupFriend = Group.where(user_id: current_user.id)
+
+    #   @groupFriend.each do |gf|
+    #      @userGroup = Usgroup.find_by(group_id: gf.id, user_id: @friendshipId.friend_id)
+       
+    #      @removeFriendGroup = Usgroup.destroy(id: @userGroup.id)
+    #    end
+
     @friendship.destroy
     respond_to do |format|
       format.html { redirect_to friendships_url, notice: 'Friendship was successfully destroyed.' }

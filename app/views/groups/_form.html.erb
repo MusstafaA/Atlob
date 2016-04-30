@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :Group_name %>
-    <%= f.text_field :name %>
-    <%= f.hidden_field :user_id , :value=>current_user.id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-inline">
+    <div class="field">
+      <%= f.label :Group_name %>
+      <%= f.text_field :name , :required => true , :class=>"form-control" %>
+      <%= f.hidden_field :user_id , :value=>current_user.id %>
+      <%= f.submit :value=>"Add" , :class=>"btn btn-default" %>
+    </div>
   </div>
 <% end %>

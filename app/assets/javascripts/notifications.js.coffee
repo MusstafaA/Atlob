@@ -11,9 +11,9 @@ class Notifications
 
 	setup: ->
 		self=@
-		#$("[data-behavior='notifications-link']").on "click", @handleClick	
+		$("[data-behavior='notifications-link']").on "click", @handleClick	
 
-		$("#top").delegate("[data-behavior='notifications-link']", "click", @handleClick)
+		#$("#top").delegate("[data-behavior='notifications-link']", "click", @handleClick)
 		$("#top").delegate(".joinBtn", "click", @joinClick)	
 		
 		(worker = ->
@@ -39,8 +39,8 @@ class Notifications
 		self=@
 		#$("[data-behavior='notifications-link']").on "click", @handleClick	
 
-		$("#top").delegate("[data-behavior='notifications-link']", "click", @handleClick)
-		$("#top").delegate(".joinBtn", "click", @joinClick)	
+		#$("#top").delegate("[data-behavior='notifications-link']", "click", @handleClick)
+		#$("#top").delegate(".joinBtn", "click", @joinClick)	
 		
 		(worker = ->
 		  $.ajax
@@ -110,7 +110,7 @@ class Notifications
 			$("[id='rounded']").css("background", "red")
 		$("[data-behavior='unread-count']").text(items.length)	
 		$("[data-behavior='notification-items']").html(items)
-		$("[data-behavior='notification-items']").append("<li><a href='/notifications'>See All Notifications</a></li>")	
+		$("[data-behavior='notification-items']").append("<li><a onClick='refreshPage()' href='/notifications'>See All Notifications</a></li>")	
 
 
 	handleFeeds: (data) ->

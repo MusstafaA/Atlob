@@ -47,11 +47,11 @@
   
     <div class="field">
     <%= f.label :uploadfile %>
-    <%= f.file_field :avatar,  :accept => 'image/*' ,class:'form-control'%>
+    <%= f.file_field :avatar,  :accept => 'image/*'%>
     </div>
 
   <div class="actions" style='margin-top: 20px' >
-    <%= f.submit "Sign up",class:'form-control',:style => 'width:90px' %>
+    <%= f.submit "Sign up",class:'form-control  btn-primary',:style => 'width:90px' %>
     <%= render "devise/shared/links" %>
   </div>
 <% end %>
