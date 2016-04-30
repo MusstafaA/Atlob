@@ -92,15 +92,12 @@
         <td>
     <button class='btn btn-success' data-toggle='modal' data-target='#inviteds'> <%= @order.inviteds.length.to_s %> Invited</button></td>
      <td>
-    <button class='btn btn-success' data-toggle='modal' data-target='#joined'> <%= @t.length.to_s %> Friends </button></td>
+    <button class='btn btn-success' data-toggle='modal' data-target='#joined'> <%= @t.length.to_s %> Joined </button></td>
     </tr>   
 </table>
 <div>
 <div>
 
- <%= link_to @t.length.to_s+' friends joined ' , '/editorder/'+@order.id.to_s+'/showjoined/' %> 
- <br>
- <%= link_to @order.inviteds.length.to_s+'  friends invited', '/editorder/'+@order.id.to_s+'/showinvited/' %> 
 
 </div>
 </div>

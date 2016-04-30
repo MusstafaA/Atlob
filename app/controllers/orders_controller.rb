@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
          @i=0
 
          @joined.each  do |joined|
-               if joined.user_id != current_user.id 
+               if joined.user_id != @order.user_id 
            @temp=User.where(:id => joined.user_id)
            
                if @i == 0
@@ -61,11 +61,12 @@ class OrdersController < ApplicationController
   end
 
   
-  @checkjoined=Ordetail.where(:order_id => @order.id).where(:user_id => current_user.id)
+ @checkjoined=Ordetail.where(:order_id => @order.id).where(:user_id => current_user.id)
   
   @checkfriend=Friendship.where(:user_id => current_user.id).where(:friend_id => @order.user_id)
+  @checkinvited=Invited.where(:order_id =>@order.id).where(:user_id => current_user.id )
   
-  if current_user.id == @order.user_id or @checkjoined.present? or @checkfriend.present?
+  if current_user.id == @order.user_id or @checkjoined.present? or @checkfriend.present? or @checkinvited.present?
     
      @user=User.where(:id => @order.user_id) 
         

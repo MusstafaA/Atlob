@@ -4,17 +4,18 @@ class InvitedsController < ApplicationController
   # GET /inviteds
   # GET /inviteds.json
   def index
-    @inviteds = Invited.all
+      redirect_to '/'
   end
 
   # GET /inviteds/1
   # GET /inviteds/1.json
   def show
+      redirect_to '/'
   end
 
   # GET /inviteds/new
   def new
-    @invited = Invited.new
+   redirect_to '/'
   end
 
   # GET /inviteds/1/edit
